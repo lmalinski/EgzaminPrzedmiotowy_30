@@ -1,6 +1,10 @@
+#define MAIN
+
 #include "mainwindow.h"
 
+#ifdef MAIN
 #include <QApplication>
+
 
 int main(int argc, char *argv[])
 {
@@ -9,3 +13,22 @@ int main(int argc, char *argv[])
     w.show();
     return a.exec();
 }
+
+#endif
+
+#ifdef DEBUG
+
+#include "urn.h"
+#include <QVector>
+#include <QDebug>
+int main()
+{
+    Urn urna(10);
+    qInfo() << urna.losuj(3);
+
+
+}
+
+
+
+#endif
