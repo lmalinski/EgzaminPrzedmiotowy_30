@@ -1,0 +1,6 @@
+Diagnostyka kodu.
+zdefiniować błędy czasu kompilacji i podać ich przykładowe objawy.
+zdefiniować błędy czasu wykonania i podać ich przykładowe objawy.
+omówić czym są błędy konsolidatora i podać ich przykładowe przyczyny.
+omówić strategię usuwania błędów czasu kompilacji.
+przedyskutować strategię odnajdywania i usuwania błędów czasu wykonania.

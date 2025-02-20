@@ -1,0 +1,6 @@
+Organizacja kodu w programowaniu.
+omówić jednostki translacji i prototypy funkcji.
+działanie i zastosowanie przestrzeni nazw.
+omówić sposoby zapobiegania wielokrotnemu dołączaniu i dołączeniom cyklicznym.
+podać i omówić przykład użycia zasobów typu extern/static/inline w jednostkach translacji.
+przedyskutować zasady podziału projektu na pliki (w tym, gdy obecne są klasy).

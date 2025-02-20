@@ -1,0 +1,6 @@
+Sygnały i sloty.
+wyjaśnić pojęcia sygnału, slotu, emitera i odbiornika.
+omówić na czym polega automatyczne i ręczne łączenie sygnałów i slotów.
+wyjaśnić czym jest relacja rodzic-dziecko.
+podać i omówić przykład emisji kaskadowej. 
+przedyskutować jak rozbudować istniejącą klasę o nowe sygnały i sloty.

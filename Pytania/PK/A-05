@@ -1,0 +1,6 @@
+Przekazywanie tablic do funkcji.
+omówić sposoby przekazywania tablic jednowymiarowych do funkcji.
+omówić sposoby przekazywania tablic wielowymiarowych do funkcji.
+wyjaśnić, kiedy można zwrócić wskaźnik lub referencję.
+podać i omówić przykład przekazania tablicy do funkcji przez wartość (z kopiowaniem).
+przedyskutować i porównać sposoby przekazywania tablic do funkcji pod względem ich elastyczności.

@@ -1,0 +1,6 @@
+Działanie GUI w Qt.
+wyjaśnić co to jest formularz.
+omówić czym jest klasa sterująca, a czym ukryta klasa wizualizacji i jak się komunikują.
+wyjaśnić, jak uzyskujemy dostęp dla kontrolek ekranowych w Qt.
+podać i omówić przykład działania (na bazie dokumentacji) wybranej kontrolki w Qt.
+przedyskutować ograniczania płynące z używania formularzy przy tworzeniu GUI.

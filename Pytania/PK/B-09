@@ -1,0 +1,6 @@
+Obsługa zdarzeń w Qt.
+omówić czym jest zdarzenie w Qt.
+wymienić poznane rodzaje zdarzeń w Qt.
+omówić na czym polega przedefiniowanie obsługi zdarzenia.
+podać i omówić praktyczny przykład przeciążenia zdarzenia. 
+porównać posługę zdarzeń do systemu sygnałów i slotów.
