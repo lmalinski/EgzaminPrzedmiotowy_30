@@ -80,3 +80,6 @@ CMakeLists.txt.user*
 .rcc/
 .uic/
 /build*/
+*.idx
+.qtc_clangd/compile_commands.json
+debug/moc_predefs.h
