@@ -8,20 +8,24 @@
 class Importer : public QObject
 {
     Q_OBJECT
-    std::array<QVector<Pytanie>,2> m_bloki;
+protected:
+    int m_numBlok = 0;
+    std::vector<QVector<Pytanie>> m_bloki;
     QStringList m_listaPrzedmiotow;
     QString m_curPrzedmiot;
 
     void wykryjPrzedmioty();
-    void readBlock(QString &path, QVector<Pytanie> &dst,char sig);
-    Pytanie readPyt(QString &path, int num, int blok);
 public:
+    explicit Importer(QObject *parent = nullptr);
     QStringList getPrzedmiotList() {return m_listaPrzedmiotow;}
-    void setPrzedmiot(QString nazwa);
-    QString getPrzedmiot() {return m_curPrzedmiot;}
-    void readData();
-    Importer();
     QVector<Pytanie> & getBlok(int num) {return m_bloki[num];}
+    void setPrzedmiot(QString nazwa) {m_curPrzedmiot = nazwa;}
+    QString getPrzedmiot() {return m_curPrzedmiot;}
+    int getNumBlok() {return m_numBlok;}
+
+    virtual void readData() = 0;
+
+signals:
 };
 
 #endif // IMPORTER_H

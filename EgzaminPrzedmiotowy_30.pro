@@ -11,14 +11,18 @@ CONFIG += c++17
 
 SOURCES += \
     importer.cpp \
+    importerJednostkowy.cpp \
     main.cpp \
     mainwindow.cpp \
+    program.cpp \
     pytanie.cpp \
     urn.cpp
 
 HEADERS += \
     importer.h \
+    importerJednostkowy.h \
     mainwindow.h \
+    program.h \
     pytanie.h \
     urn.h
 

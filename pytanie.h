@@ -5,15 +5,17 @@
 
 class Pytanie
 {
-    QString m_head = "";
-    QString m_crit = "";
-    QString m_other = "";
+    QString m_head    = "";
+    QString m_know    = "";
+    QString m_underst = "";
+    QString m_discus  = "";
     int m_num;
     int m_blok;
 public:
     Pytanie() = default;
     Pytanie(QString &rawData, int num, int blok);
     QString getTresc();
+    QString getPlainHead();
     int getNum () {return m_num;}
     int getBlok () {return m_blok;}
 };
