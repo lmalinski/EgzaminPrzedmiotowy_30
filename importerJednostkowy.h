@@ -8,11 +8,11 @@
 class ImporterJednsotkowy : public Importer
 {
     Q_OBJECT
-
+protected:
     bool readBlock(QString &path, QVector<Pytanie> &dst,char sig);
     Pytanie readPyt(QString &path, int num, int blok);
 public:
-    ImporterJednsotkowy(QObject *parent = nullptr);
+    ImporterJednsotkowy(QObject *parent,QString dir);
     void readData() override;
 };
 

@@ -12,6 +12,7 @@ CONFIG += c++17
 SOURCES += \
     importer.cpp \
     importerJednostkowy.cpp \
+    importerblokowy.cpp \
     main.cpp \
     mainwindow.cpp \
     program.cpp \
@@ -21,6 +22,7 @@ SOURCES += \
 HEADERS += \
     importer.h \
     importerJednostkowy.h \
+    importerblokowy.h \
     mainwindow.h \
     program.h \
     pytanie.h \

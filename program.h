@@ -2,8 +2,9 @@
 #define PROGRAM_H
 
 #include <QObject>
-#include <importerJednostkowy.h>
 #include <urn.h>
+#include "importer.h"
+
 
 class Program : public QObject
 {

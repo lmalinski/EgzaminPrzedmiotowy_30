@@ -2,16 +2,13 @@
 #include <QDir>
 #include <QDebug>
 
-ImporterJednsotkowy::ImporterJednsotkowy(QObject *parent)
-    :Importer(parent)
-{
-    wykryjPrzedmioty();
-    m_curPrzedmiot = m_listaPrzedmiotow.first();
-}
+ImporterJednsotkowy::ImporterJednsotkowy(QObject *parent,QString dir)
+    :Importer(parent,dir)
+{}
 
 void ImporterJednsotkowy::readData()
 {
-    QString egzPath("Pytania/" + m_curPrzedmiot);
+    QString egzPath(m_dir + "/" + m_curPrzedmiot);
     char sig = 'A';
     QVector<Pytanie> blok;
     while(readBlock(egzPath,blok,sig++))

@@ -1,8 +1,10 @@
 #include "program.h"
 #include <QDebug>
+//#include "importerJednostkowy.h"
+#include "importerblokowy.h"
 
 Program::Program(QObject *parent)
-    : QObject{parent},m_BazaPytan(new ImporterJednsotkowy(this))
+    : QObject{parent},m_BazaPytan(new ImporterBlokowy(this,"PytaniaNEW"))
 {}
 
 void Program::setPrzedmiot(QString nazwa)

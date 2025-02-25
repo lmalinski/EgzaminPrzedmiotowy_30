@@ -7,6 +7,7 @@ Pytanie::Pytanie(QString &rawData, int num, int blok)
     m_num = num;
     m_blok = blok;
     QStringList separated = rawData.split("|");
+    Q_ASSERT_X(separated.size()==4,"Pytanie","Nieparwidlowa liczba członów pytania");
     m_head = separated.at(0);
     m_know = ""; m_underst = ""; m_discus = "";
     QString trescKnow = separated.at(1);
