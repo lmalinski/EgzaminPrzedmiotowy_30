@@ -31,7 +31,7 @@ void Program::generujPytania(int blok, int num)
         int toLos = MIN_LICZ_PYT + num;
         m_WylosPyt[blok].clear();
         m_WylosPyt[blok].resize(toLos);
-        QVector<int> numery = m_bloki[blok].losuj(toLos);
+        QVector<int> numery = m_bloki[blok].losujRedukcjaPowt(toLos);
         for(int pyt = 0; pyt < toLos; pyt++)
             m_WylosPyt[blok][pyt] = m_BazaPytan->getBlok(blok).at(numery[pyt]);
 

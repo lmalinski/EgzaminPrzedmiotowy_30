@@ -1,5 +1,4 @@
 #define MAIN
-
 #include "mainwindow.h"
 
 #ifdef MAIN
@@ -21,12 +20,134 @@ int main(int argc, char *argv[])
 #include "urn.h"
 #include <QVector>
 #include <QDebug>
-int main()
+#include <QQueue>
+
+const int NUM_PYT = 20;
+const int NUM_LOS = 3;
+const int NUM_REP = 4;
+const int NUM_TEST = 10000;
+
+int countRep(QQueue<QVector<int>> &que)
 {
-    Urn urna(10);
-    qInfo() << urna.losuj(3);
+    int wyn = 0;
+    const int SIZE =  NUM_REP*NUM_LOS;
+    std::array<int,SIZE> linData;
+    int idx=0;
+    for(int vec=0;vec<NUM_REP;vec++)
+        for(int elem = 0; elem < NUM_LOS; elem++)
+            linData[idx++] = que[vec][elem];
+    for(int i = 0; i<SIZE-1;i++ )
+        for(int j=i+1;j<SIZE;j++)
+            if(linData[i]==linData[j])
+                wyn++;
+    return wyn;
+}
+
+int main(int argc, char *argv[])
+{
+    Urn ref(NUM_PYT);
+    Urn testNC(NUM_PYT);
+
+    QQueue<QVector<int>> refQ;
+    QQueue<QVector<int>> testNCQ;
+    for(int t = 0;t<NUM_REP-1;t++)
+    {
+        refQ.push_front(ref.losuj(NUM_LOS));
+        testNCQ.push_front(testNC.losujRedukcjaPowt(NUM_LOS));
+    }
+    std::array<int,2> wyniki = {};
+    for(int t = 0;t<NUM_TEST-NUM_REP+1;t++)
+    {
+        //push:
+        refQ.push_front(ref.losuj(NUM_LOS));
+        testNCQ.push_front(testNC.losujRedukcjaPowt(NUM_LOS));
+        //eval:
+
+        wyniki[0] += countRep(refQ);
+        wyniki[1] += countRep(testNCQ);
+
+        //pop front:
+        refQ.pop_back();
+        testNCQ.pop_back();
+    }
+    qInfo() << "REFERENCYJNY:" << (double)wyniki[0]/NUM_TEST;
+    qInfo() << "NORM CIAGLA :" << (double)wyniki[1]/NUM_TEST;
+
+    return 0;
+}
 
 
+
+#endif
+
+
+#ifdef DEBUG_POWT
+
+#include "urn.h"
+#include <QVector>
+#include <QDebug>
+#include <deque>
+
+const int NUM_PYT = 20;
+const int NUM_LOS = 3;
+const int NUM_REP = 3;
+const int NUM_TEST = 10000;
+const int NUM_PTS  = 10;
+
+
+int countRep(std::deque<QVector<int>> &que)
+{
+    int wyn = 0;
+    const int SIZE =  NUM_REP*NUM_LOS;
+    std::array<int,SIZE> linData;
+    int idx=0;
+    for(int vec=0;vec<NUM_REP;vec++)
+        for(int elem = 0; elem < NUM_LOS; elem++)
+            linData[idx++] = que[vec][elem];
+    for(int i = 0; i<SIZE-1;i++ )
+        for(int j=i+1;j<SIZE;j++)
+            if(linData[i]==linData[j])
+                wyn++;
+    return wyn;
+}
+int eksperymnet(int inc)
+{
+    qInfo() << "Tworzenie:";
+    Urn testD2(NUM_PYT,TypNorm::normDziel2);
+    Urn::setPrzyrostLiczebnosci(inc);
+    std::deque<QVector<int>> testD2Q;
+    qInfo() << "Rozbieg:";
+    testD2Q.push_front(testD2.losujRedukcjaPowt(NUM_LOS));
+    testD2Q.push_front(testD2.losujRedukcjaPowt(NUM_LOS));
+    int wynik = 0;
+    qInfo() << "TESTY:";
+    for(int t = 0;t<NUM_TEST-2;t++)
+    {
+        testD2Q.push_front(testD2.losujRedukcjaPowt(NUM_LOS));
+        wynik += countRep(testD2Q);
+        testD2Q.pop_back();
+    }
+    return wynik;
+}
+
+int model(double prob)
+{
+    return round(pow(1.5896*prob,-2.67));
+}
+
+int main(int argc, char *argv[])
+{
+    std::array<double,NUM_PTS> wyniki = {};
+    int increment = 1;
+    for(int punkt = 0; punkt< NUM_PTS; punkt++)
+    {
+        wyniki[punkt] = (double)eksperymnet(increment)/NUM_TEST;
+
+        qInfo() << "INC :" << increment << " : " << wyniki[punkt] << ": " << model(wyniki[punkt]);
+        increment*=2;
+    }
+
+    return 0;
 }
 
 
