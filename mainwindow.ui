@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1200</width>
-    <height>740</height>
+    <height>800</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -19,13 +19,13 @@
   <property name="minimumSize">
    <size>
     <width>1200</width>
-    <height>740</height>
+    <height>800</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
     <width>1200</width>
-    <height>740</height>
+    <height>800</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -38,7 +38,7 @@
       <x>1040</x>
       <y>0</y>
       <width>151</width>
-      <height>701</height>
+      <height>761</height>
      </rect>
     </property>
     <property name="font">
@@ -117,7 +117,7 @@
       <x>10</x>
       <y>10</y>
       <width>1011</width>
-      <height>691</height>
+      <height>751</height>
      </rect>
     </property>
     <property name="font">
@@ -127,7 +127,7 @@
      </font>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="tabA">
      <attribute name="title">
@@ -233,7 +233,7 @@
         <x>10</x>
         <y>60</y>
         <width>991</width>
-        <height>581</height>
+        <height>641</height>
        </rect>
       </property>
       <property name="columnCount">
@@ -248,7 +248,7 @@
         <x>10</x>
         <y>60</y>
         <width>991</width>
-        <height>581</height>
+        <height>641</height>
        </rect>
       </property>
      </widget>
@@ -360,7 +360,7 @@
         <x>10</x>
         <y>60</y>
         <width>991</width>
-        <height>581</height>
+        <height>641</height>
        </rect>
       </property>
       <property name="rowCount">
@@ -378,7 +378,7 @@
         <x>10</x>
         <y>60</y>
         <width>991</width>
-        <height>581</height>
+        <height>641</height>
        </rect>
       </property>
      </widget>

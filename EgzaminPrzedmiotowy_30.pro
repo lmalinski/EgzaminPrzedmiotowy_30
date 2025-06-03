@@ -35,3 +35,42 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+DISTFILES += \
+    PytaniaNEW/PK/BlokA \
+    PytaniaNEW/PK/BlokB \
+    PytaniaNEW/PPK/BlokA \
+    PytaniaOLD/PK/A-01 \
+    PytaniaOLD/PK/A-02 \
+    PytaniaOLD/PK/A-03 \
+    PytaniaOLD/PK/A-04 \
+    PytaniaOLD/PK/A-05 \
+    PytaniaOLD/PK/A-06 \
+    PytaniaOLD/PK/A-07 \
+    PytaniaOLD/PK/A-08 \
+    PytaniaOLD/PK/A-09 \
+    PytaniaOLD/PK/A-10 \
+    PytaniaOLD/PK/A-11 \
+    PytaniaOLD/PK/A-12 \
+    PytaniaOLD/PK/A-13 \
+    PytaniaOLD/PK/B-01 \
+    PytaniaOLD/PK/B-02 \
+    PytaniaOLD/PK/B-03 \
+    PytaniaOLD/PK/B-04 \
+    PytaniaOLD/PK/B-05 \
+    PytaniaOLD/PK/B-06 \
+    PytaniaOLD/PK/B-07 \
+    PytaniaOLD/PK/B-08 \
+    PytaniaOLD/PK/B-09 \
+    PytaniaOLD/PK/B-10 \
+    PytaniaOLD/PK/B-11 \
+    PytaniaOLD/PK/B-12 \
+    PytaniaOLD/PK/B-13 \
+    PytaniaOLD/PPK/A-01 \
+    PytaniaOLD/PPK/A-02 \
+    PytaniaOLD/PPK/A-03 \
+    PytaniaOLD/PPK/A-04 \
+    PytaniaOLD/PPK/A-05 \
+    PytaniaOLD/PPK/A-06 \
+    PytaniaOLD/PPK/A-07 \
+    PytaniaOLD/PPK/A-08

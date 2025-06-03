@@ -15,6 +15,54 @@ int main(int argc, char *argv[])
 
 #endif
 
+#ifdef SEMIN
+
+#include "urn.h"
+#include <QVector>
+#include <QDebug>
+#include <QQueue>
+#include <algorithm>
+
+const int NUM_PYT = 12;
+const int NUM_LOS = 7;
+const int NUM_ZEST = 30;
+
+QVector<int> rest(QVector<int> to_remove, int pula)
+{
+    QVector<int> result(pula);
+    std::iota(result.begin(), result.end(), 1);
+
+    result.erase(
+        std::remove_if(result.begin(), result.end(),
+                        [&to_remove](int num)
+                        {
+                            return std::find(to_remove.begin(), to_remove.end(), num) != to_remove.end();
+                        }
+                ), result.end());
+    return result;
+}
+
+
+
+int main(int argc, char *argv[])
+{
+    Urn urna(NUM_PYT);
+    //tworzenie nowego zestatwu:
+    for(int zest = 0; zest <NUM_ZEST;zest++)
+    {
+        auto zestaw = urna.losujRedukcjaPowt(NUM_LOS);
+        std::transform(zestaw.begin(),zestaw.end(),zestaw.begin(),[](int x){return x+1;});
+        auto pdst = zestaw.first(3);
+        std::sort(pdst.begin(),pdst.end());
+        auto alt1 = zestaw.last(4);
+        std::sort(alt1.begin(),alt1.end());
+        auto alt2 = rest(zestaw,NUM_PYT);
+        qInfo() << zest+1 << ": " << pdst  << alt1 << alt2;
+    }
+}
+
+#endif
+
 #ifdef DEBUG
 
 #include "urn.h"

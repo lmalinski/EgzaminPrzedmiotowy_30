@@ -7,6 +7,7 @@ ImporterBlokowy::ImporterBlokowy(QObject *parent, QString dir)
 
 void ImporterBlokowy::readData()
 {
+    m_bloki.clear();
     QString egzPath(m_dir + "/" + m_curPrzedmiot);
     QDir pytania = QDir::current();
     pytania.cd(egzPath);
@@ -22,13 +23,12 @@ void ImporterBlokowy::readData()
     QVector<Pytanie> blok;
     for(int idx = 0 ;idx < numBlok; idx++)
     {
+        blok.clear();
         QString pytPath = egzPath + "/" + files.at(idx);
         readBlock(pytPath,blok,idx);
         m_bloki.push_back(blok);
     }
     m_numBlok = m_bloki.size();
-
-
 }
 
 void ImporterBlokowy::readBlock(QString &path, QVector<Pytanie> &dst, int numBlok)

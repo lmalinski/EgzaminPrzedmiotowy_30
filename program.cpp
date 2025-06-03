@@ -13,9 +13,10 @@ void Program::setPrzedmiot(QString nazwa)
 }
 
 void Program::loadPytania()
-{
+{   
     m_BazaPytan->readData();
-    for (int blok = 0; blok < m_BazaPytan->getNumBlok(); blok++)
+    int numBlok = m_BazaPytan->getNumBlok();
+    for (int blok = 0; blok < numBlok; blok++)
         m_bloki[blok].setNum(m_BazaPytan->getBlok(blok).size());
 }
 

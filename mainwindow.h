@@ -35,9 +35,7 @@ private slots:
     void on_pushLoad_clicked();
     void wypisz(QVector<Pytanie>&,int);
     void wypiszFull(QVector<Pytanie>&,int);
-
     void on_pushWybBA_clicked();
-
     void on_pushWybBB_clicked();
 
 private:

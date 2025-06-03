@@ -75,6 +75,7 @@ int Urn::losujZDystr()
         if( val <= m_dystr[idx])
             return idx;
     }
+    return -1;
 }
 
 QVector<int> Urn::losujRedukcjaPowt(int numPyt)

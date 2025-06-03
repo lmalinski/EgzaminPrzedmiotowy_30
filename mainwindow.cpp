@@ -195,13 +195,13 @@ void MainWindow::on_pushWybBA_clicked()
 void MainWindow::on_pushWybBB_clicked()
 {
     QVector<int> numToRem = chkToRemove(1);
-    if(numToRem.size() != ui->liczA->value())
+    if(numToRem.size() != ui->liczB->value())
     {
         ui->statusBar->showMessage("Nie właściwa liczba pytan!");
         return;
     }
     disableChBoxes(1);
     m_uslugi.odznaczPytania(numToRem,1);
-    ui->pushWybBA->setEnabled(false);
+    ui->pushWybBB->setEnabled(false);
 }
 
