@@ -5,22 +5,22 @@
 
 class Pytanie
 {
-    QString m_head    = "";
-    QString m_know    = "";
-    QString m_underst = "";
-    QString m_discus  = "";
-    int m_num;
+    QString m_naglowek    = "";
+    QString m_wiedza    = "";
+    QString m_zrozum = "";
+    QString m_dyskusja  = "";
+    int m_numer;
     int m_blok;
 public:
     Pytanie() = default;
     Pytanie(QString &rawData, int num, int blok);
     QString getTresc();
-    QString getPlainHead();
-    QString getHead();
-    QString getKnow();
-    QString getUnderst();
-    QString getDiscus();
-    int getNum () {return m_num;}
+    QString getCzystyNaglowek();
+    QString getNaglowek();
+    QString getWiedza();
+    QString getZrozumienie();
+    QString getDyskusja();
+    int getNumer () {return m_numer;}
     int getBlok () {return m_blok;}
 };
 

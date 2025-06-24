@@ -12,27 +12,27 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this); //wbudowane
 
     //tablice do strowania zbiorowego:
-    m_pytDisp     = {ui->pytA,ui->pytB};
-    m_pytDispFull = {ui->pytAFull,ui->pytBFull};
-    m_pytLicz     = {ui->liczA,ui->liczB};
-    m_genPush     = {ui->pushGenBA,ui->pushGenBB};
-    m_wybPush     = {ui->pushWybBA,ui->pushWybBB};
-    m_tabs        = {ui->tabA,ui->tabB};
+    m_pytDisp      = {ui->pytA,ui->pytB};
+    m_pytDispPelny = {ui->pytAPelny,ui->pytBPelny};
+    m_pytLicz      = {ui->liczA,ui->liczB};
+    m_genPush      = {ui->pushGenBA,ui->pushGenBB};
+    m_wybPush      = {ui->pushWybBA,ui->pushWybBB};
+    m_tabs         = {ui->tabA,ui->tabB};
 
     //Ustawienie comboboxa z nazwamy przedmiotów:
     ui->przedmiot->clear();
     ui->przedmiot->addItems(m_uslugi.getListaPrzedmiotow());
     ui->przedmiot->setCurrentIndex(1); // domyślnie PPK
 
-    setupGUI();
+    ustawGUI();
     connect(&m_uslugi,SIGNAL(wypisz(QVector<Pytanie>&, int)),this,SLOT(wypisz(QVector<Pytanie>&,int)));
 }
 
-void MainWindow::setupGUI()
+void MainWindow::ustawGUI()
 {
-    dissableAll();
-    on_pushClear_clicked();
-    ui->pushLoad->setEnabled(true);
+    wylaczWszystko();
+    on_pushWyczysc_clicked();
+    ui->pushWczytaj->setEnabled(true);
     QString curPrzedmiot = m_uslugi.getAktPrzedmiot();
     this->setWindowTitle(curPrzedmiot);
     ui->tabBloki->setCurrentIndex(0);
@@ -45,12 +45,12 @@ MainWindow::~MainWindow()
 
 // METODY (AKCJE):
 
-void MainWindow::dissableAll()
+void MainWindow::wylaczWszystko()
 {
     for(int blok=0;blok<MAX_LICZ_BLOKOW;blok++)
     {
         m_pytDisp[blok]->setEnabled(false);
-        m_pytDispFull[blok]->setEnabled(false);
+        m_pytDispPelny[blok]->setEnabled(false);
         m_pytLicz[blok]->setEnabled(false);
         m_genPush[blok]->setEnabled(false);
         m_tabs[blok]->setEnabled(false);
@@ -60,30 +60,30 @@ void MainWindow::dissableAll()
 void MainWindow::wypiszFull(QVector<Pytanie> &pytania, int blok)
 {
     m_pytDisp[blok]->hide();
-    m_pytDispFull[blok]->show();
-    m_pytDispFull[blok]->setEnabled(true);
+    m_pytDispPelny[blok]->show();
+    m_pytDispPelny[blok]->setEnabled(true);
     QString tresc = "";
-    if(ui->checkDecompose->isChecked()) // wypisywanie z rozbiciem na sekcje
+    if(ui->checkDekomponuj->isChecked()) // wypisywanie z rozbiciem na sekcje
     {
         for(int pyt = 0; pyt < pytania.size(); pyt++)
-            tresc += pytania[pyt].getHead();
+            tresc += pytania[pyt].getNaglowek();
         for(int pyt = 0; pyt < pytania.size(); pyt++)
-            tresc += pytania[pyt].getKnow();
+            tresc += pytania[pyt].getWiedza();
         for(int pyt = 0; pyt < pytania.size(); pyt++)
-            tresc += pytania[pyt].getUnderst();
+            tresc += pytania[pyt].getZrozumienie();
         for(int pyt = 0; pyt < pytania.size(); pyt++)
-            tresc += pytania[pyt].getDiscus();
+            tresc += pytania[pyt].getDyskusja();
     }
     else //wypisywanie normalne z podziałem na pytania
     {
         for(int pyt = 0; pyt < pytania.size(); pyt++)
             tresc += pytania[pyt].getTresc();
     }
-    m_pytDispFull[blok]->setText(tresc);
-    ui->checkDecompose->setEnabled(true);
+    m_pytDispPelny[blok]->setText(tresc);
+    ui->checkDekomponuj->setEnabled(true);
 }
 
-void MainWindow::makeTable(int blok,int num)
+void MainWindow::tworzTabele(int blok,int num)
 {
     m_pytDisp[blok]->clear();
     m_pytDisp[blok]->setEnabled(true);
@@ -110,7 +110,7 @@ void MainWindow::makeTable(int blok,int num)
 
 }
 
-QVector<int> MainWindow::chkToRemove(int blok)
+QVector<int> MainWindow::sprawdzDoUsuniecia(int blok)
 {
     int numRows = m_pytDisp[blok]->rowCount();
     QVector<int> pytNums;
@@ -122,7 +122,7 @@ QVector<int> MainWindow::chkToRemove(int blok)
     return pytNums;
 }
 
-void MainWindow::disableChBoxes(int blok)
+void MainWindow::wylaczCheckBokxy(int blok)
 {
     int numRows = m_pytDisp[blok]->rowCount();
     QVector<int> pytNums;
@@ -132,13 +132,13 @@ void MainWindow::disableChBoxes(int blok)
 
 void MainWindow::wyborPytan(int blok)
 {
-    QVector<int> numToRem = chkToRemove(blok);
+    QVector<int> numToRem = sprawdzDoUsuniecia(blok);
     if(numToRem.size() != m_pytLicz[blok]->value())
     {
         ui->statusBar->showMessage("Nie właściwa liczba pytan!");
         return;
     }
-    disableChBoxes(blok);
+    wylaczCheckBokxy(blok);
     m_uslugi.odznaczPytania(numToRem,blok);
     m_wybPush[blok]->setEnabled(false);
 }
@@ -148,7 +148,7 @@ void MainWindow::genrujPytania(int blok)
     m_genPush[blok]->setEnabled(false);
     m_pytLicz[blok]->setEnabled(false);
     m_wybPush[blok]->setEnabled(false);
-    ui->pushClear->setEnabled(true);
+    ui->pushWyczysc->setEnabled(true);
     m_uslugi.generujPytania(blok,m_pytLicz[blok]->value());
 }
 
@@ -164,17 +164,17 @@ void MainWindow::wypisz(QVector<Pytanie>& pytania, int blok)
     else //więcej pytan:
     {
         m_pytDisp[blok]->show();
-        m_pytDispFull[blok]->hide();
+        m_pytDispPelny[blok]->hide();
         int numPyt = pytania.size();
-        makeTable(blok,numPyt);
+        tworzTabele(blok,numPyt);
         for(int pyt = 0; pyt < numPyt; pyt++)
-            m_pytDisp[blok]->setItem(pyt,1,new QTableWidgetItem(pytania[pyt].getPlainHead()));
+            m_pytDisp[blok]->setItem(pyt,1,new QTableWidgetItem(pytania[pyt].getCzystyNaglowek()));
         m_wybPush[blok]->setEnabled(true);
-        ui->checkDecompose->setEnabled(false);
+        ui->checkDekomponuj->setEnabled(false);
     }
 }
 
-void MainWindow::on_pushClear_clicked()
+void MainWindow::on_pushWyczysc_clicked()
 {
     for(int blok=0;blok<m_uslugi.getLiczbaBlokow();blok++)
     {
@@ -182,7 +182,7 @@ void MainWindow::on_pushClear_clicked()
         m_pytLicz[blok]->setEnabled(true);
         m_genPush[blok]->setEnabled(true);
         m_pytDisp[blok]->clear();
-        m_pytDispFull[blok]->clear();
+        m_pytDispPelny[blok]->clear();
         m_chkBoxes[blok].clear();
         m_pytLicz[blok]->setValue(0);
     }
@@ -202,15 +202,15 @@ void MainWindow::on_pushGenBB_clicked()
 void MainWindow::on_przedmiot_currentTextChanged(const QString &i_przedmiot)
 {
     m_uslugi.setPrzedmiot(i_przedmiot);
-    setupGUI();
+    ustawGUI();
 }
 
-void MainWindow::on_pushLoad_clicked()
+void MainWindow::on_pushWczytaj_clicked()
 {
-    dissableAll();
-    m_uslugi.loadPytania();
-    ui->pushLoad->setEnabled(false);
-    on_pushClear_clicked();
+    wylaczWszystko();
+    m_uslugi.wczytajPytania();
+    ui->pushWczytaj->setEnabled(false);
+    on_pushWyczysc_clicked();
 }
 
 void MainWindow::on_pushWybBA_clicked()
@@ -225,7 +225,7 @@ void MainWindow::on_pushWybBB_clicked()
 }
 
 
-void MainWindow::on_checkDecompose_stateChanged(int state)
+void MainWindow::on_checkDekomponuj_stateChanged(int state)
 {
     Q_UNUSED(state);
     m_uslugi.zwrocAktWylosowane(ui->tabBloki->currentIndex());

@@ -12,7 +12,7 @@ class Program : public QObject
 public:
     explicit Program(QObject *parent = nullptr);
     void setPrzedmiot(QString nazwa);
-    void loadPytania();
+    void wczytajPytania();
     int getLiczbaBlokow();
     void generujPytania(int blok, int num);
     QString getAktPrzedmiot();

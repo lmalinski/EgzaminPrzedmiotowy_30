@@ -15,12 +15,12 @@ void Program::setPrzedmiot(QString nazwa)
     m_BazaPytan->setPrzedmiot(nazwa);
 }
 
-void Program::loadPytania()
+void Program::wczytajPytania()
 {   
-    m_BazaPytan->readData();
+    m_BazaPytan->wczytajDane();
     int numBlok = m_BazaPytan->getNumBlok();
     for (int blok = 0; blok < numBlok; blok++)
-        m_bloki[blok].setNum(m_BazaPytan->getBlok(blok).size());
+        m_bloki[blok].setLiczElem(m_BazaPytan->getBlok(blok).size());
 }
 
 int Program::getLiczbaBlokow()
@@ -50,7 +50,7 @@ QString Program::getAktPrzedmiot()
 
 QStringList Program::getListaPrzedmiotow()
 {
-    return m_BazaPytan->getPrzedmiotList();
+    return m_BazaPytan->getListaPrzedmiotow();
 }
 
 void Program::odznaczPytania(QVector<int> pytDoOdznaczenia, int blok)
@@ -63,7 +63,8 @@ void Program::odznaczPytania(QVector<int> pytDoOdznaczenia, int blok)
 
 void Program::zwrocAktWylosowane(int blok)
 {
-    assert(blok < MAX_LICZ_BLOKOW);
+    Q_ASSERT_X(blok < MAX_LICZ_BLOKOW,"Program","Nieprawidlowy numer bloku");
     if(m_WylosPyt[blok].size() == MIN_LICZ_PYT)
         emit wypisz(m_WylosPyt[blok], blok);
+    else return; // celowe zanazaczenie pominiecia wypisywania
 }

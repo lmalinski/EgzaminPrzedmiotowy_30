@@ -69,7 +69,7 @@
       </font>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushLoad">
+    <widget class="QPushButton" name="pushWczytaj">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -88,7 +88,7 @@
       <string>WCZYTAJ</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushClear">
+    <widget class="QPushButton" name="pushWyczysc">
      <property name="enabled">
       <bool>false</bool>
      </property>
@@ -110,7 +110,7 @@
       <string>WYCZYŚĆ</string>
      </property>
     </widget>
-    <widget class="QCheckBox" name="checkDecompose">
+    <widget class="QCheckBox" name="checkDekomponuj">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -140,7 +140,7 @@
      </font>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="tabA">
      <attribute name="title">
@@ -255,7 +255,7 @@
       <column/>
       <column/>
      </widget>
-     <widget class="QTextBrowser" name="pytAFull">
+     <widget class="QTextBrowser" name="pytAPelny">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -385,7 +385,7 @@
       <column/>
       <column/>
      </widget>
-     <widget class="QTextBrowser" name="pytBFull">
+     <widget class="QTextBrowser" name="pytBPelny">
       <property name="geometry">
        <rect>
         <x>10</x>

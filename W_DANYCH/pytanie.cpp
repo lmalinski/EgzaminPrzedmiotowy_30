@@ -1,56 +1,70 @@
 #include "pytanie.h"
 #include <QDebug>
 
+// KONSTRUKTOR - przyjmuje surowe dane pobrane z pliku ze znacznikami sterujacymi, oraz numer pytania i bloku:
+
 Pytanie::Pytanie(QString &rawData, int num, int blok)
 {
-
-    m_num = num;
+    m_numer = num;
     m_blok = blok;
+
+    // Dzielenie tresci pytan na znakach |:
     QStringList separated = rawData.split("|");
-    Q_ASSERT_X(separated.size()==4,"Pytanie","Nieparwidlowa liczba członów pytania");
-    m_head = separated.at(0);
-    m_know = ""; m_underst = ""; m_discus = "";
-    QString trescKnow = separated.at(1);
-    trescKnow.remove(0,1);
-    m_know += "- " + trescKnow ;
+    Q_ASSERT_X(separated.size() == 4,"Pytanie","Nieparwidlowa liczba członów pytania");
 
-    QString trescUnderst = separated.at(2);
-    trescUnderst.remove(0,1);
-    m_underst+= "- " + trescUnderst ;
+    // Odczytanie nagłowka:
+    m_naglowek = separated.at(0);
 
-    QString trescDiscus = separated.at(3);
-    trescDiscus.remove(0,1);
-    m_discus += "- " + trescDiscus ;
+    QString bufor; // bufor do wstepnego przetwarzania tresci pytań
+
+    // Odczytanie wiedzy:
+    bufor = separated.at(1);
+    bufor.remove(0,1);
+    m_wiedza = "- " + bufor ;
+
+    // Odytanie zrozumienia:
+    bufor = separated.at(2);
+    bufor.remove(0,1);
+    m_zrozum+= "- " + bufor;
+
+    // Odytanie dyskusji:
+    bufor = separated.at(3);
+    bufor.remove(0,1);
+    m_dyskusja += "- " + bufor;
+}
+
+// GETERY TRESCI CZYSTEJ (sam tekst):
+
+QString Pytanie::getCzystyNaglowek()
+{
+    return m_naglowek;
+}
+
+// GETERY TRESCI FORMATOWANEJ (tekst ze znacznikami HTML):
+
+QString Pytanie::getNaglowek()
+{
+    return "<p style=\"color:black\"><u>" + QString::number(m_numer + 1) + ". " + m_naglowek + "</u></p>";
+}
+
+QString Pytanie::getWiedza()
+{
+    return " <p style=\"color:red\">" + m_wiedza + "</p>";
+}
+
+QString Pytanie::getZrozumienie()
+{
+    return " <p style=\"color:green\">" + m_zrozum + "</p>";
+}
+
+QString Pytanie::getDyskusja()
+{
+    return " <p style=\"color:blue\">" + m_dyskusja + "</p>";
 }
 
 QString Pytanie::getTresc()
 {
-    return getHead() + getKnow() + getUnderst() + getDiscus();
-}
-
-QString Pytanie::getPlainHead()
-{
-    return m_head;
-}
-
-QString Pytanie::getHead()
-{
-    return "<p style=\"color:black\"><u>" + QString::number(m_num + 1) + ". " + m_head + "</u></p>";
-}
-
-QString Pytanie::getKnow()
-{
-    return " <p style=\"color:red\">" + m_know + "</p>";
-}
-
-QString Pytanie::getUnderst()
-{
-    return " <p style=\"color:green\">" + m_underst + "</p>";
-}
-
-QString Pytanie::getDiscus()
-{
-    return " <p style=\"color:blue\">" + m_discus + "</p>";
+    return getNaglowek() + getWiedza() + getZrozumienie() + getDyskusja();
 }
 
 

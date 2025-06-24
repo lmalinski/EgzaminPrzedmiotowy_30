@@ -2,13 +2,21 @@
 #include <QDir>
 #include <QDebug>
 
+// KONSTRUKTORY:
+
 Importer::Importer(QObject *parent, QString dir)
     : QObject{parent},m_dir(dir)
 {
     wykryjPrzedmioty();
-    m_curPrzedmiot = m_listaPrzedmiotow.first();
+    m_aktPrzedmiot = m_listaPrzedmiotow.first();
 }
 
+// JEDYNA WSPÓLNA ZŁOŻONA METODA DLA WSZYSTKICH IMPORTERÓW:
+
+
+// Metoda ustala nazwy obsługiwanych pzredmiotów na podstawie sktruktury
+// katalogów, w zadanym katalogu bazy pytań (katalog ten wskazuje się przy
+// towrzeniu instancji importera).
 void Importer::wykryjPrzedmioty()
 {
     QDir pytania = QDir::current();

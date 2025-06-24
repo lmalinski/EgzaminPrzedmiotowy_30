@@ -4,6 +4,9 @@
 #include <QVector>
 #include <QQueue>
 
+// Klasa do losowania - losuje tylko indkeksy (liczby całkowite),
+// to program glowny interpretuje te indeksy jako numery pytan.
+
 class Urn
 {
     //Pola klucozwe:
@@ -11,13 +14,13 @@ class Urn
     int m_zakresLos,m_liczbaElementow;
     std::mt19937 m_generator;
 
-    //Pola dodatkowe (do ksztatowania rozkładu):
+    //Pola dodatkowe (do ksztaltowania rozkładu):
     QVector<float> m_liczLos;
     QVector<float> m_rozklad;
     QVector<float> m_dystr;
 
     //Metody uzytkowe wewnętrzne.:
-    void setup();
+    void ustaw();
     void generujRozklad();
     void generujDytsr();
     void normalizujLiczebnosci();
@@ -31,6 +34,6 @@ public:
     QVector<int> losuj(int numPyt);
     QVector<int> losujRedukcjaPowt(int numPyt);
     bool maElementy(){return (m_elementy.size()>0);}
-    void setNum(int liczbaElementow);
+    void setLiczElem(int liczbaElementow);
 };
 #endif // URN_H

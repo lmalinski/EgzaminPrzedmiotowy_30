@@ -1,5 +1,5 @@
 #define MAIN
-#include "mainwindow.h"
+#include "W_PREZENTACJI\mainwindow.h"
 
 #ifdef MAIN
 #include <QApplication>

@@ -12,7 +12,6 @@ CONFIG += c++17
 SOURCES += \
     W_DANYCH\importer.cpp \
     W_DANYCH\importerBlokowy.cpp \
-    W_DANYCH\importerJednostkowy.cpp \
     main.cpp \
     W_PREZENTACJI\mainwindow.cpp \
     W_USLUG\program.cpp \
@@ -22,7 +21,6 @@ SOURCES += \
 HEADERS += \
     W_DANYCH\importer.h \
     W_DANYCH\importerBlokowy.h \
-    W_DANYCH\importerJednostkowy.h \
     W_PREZENTACJI\mainwindow.h \
     W_USLUG\program.h \
     W_DANYCH\pytanie.h \

@@ -5,6 +5,11 @@
 #include <QVector>
 #include "pytanie.h"
 
+// Importer jest klasą bazową definiumącą podstawowe narzędzia potrzebne we wszytkich
+// mozliwych impoertreach (klasy pochodne od tej) jakie mogą współpracować z programem.
+// Pozwala to na stsounkowo latwą podmianę algorytmu wczytywania pytań bez potzreby
+// ingerenecji w resztę programu (interfejs jest zdefiniowany w tej klasie).
+
 class Importer : public QObject
 {
     Q_OBJECT
@@ -13,16 +18,16 @@ protected:
     QString m_dir;
     std::vector<QVector<Pytanie>> m_bloki;
     QStringList m_listaPrzedmiotow;
-    QString m_curPrzedmiot;
+    QString m_aktPrzedmiot;
     void wykryjPrzedmioty();
 public:
     explicit Importer(QObject *parent, QString dir);
-    QStringList getPrzedmiotList() {return m_listaPrzedmiotow;}
+    QStringList getListaPrzedmiotow() {return m_listaPrzedmiotow;}
     QVector<Pytanie> & getBlok(int num) {return m_bloki[num];}
-    void setPrzedmiot(QString nazwa) {m_curPrzedmiot = nazwa;}
-    QString getPrzedmiot() {return m_curPrzedmiot;}
+    void setPrzedmiot(QString nazwa) {m_aktPrzedmiot = nazwa;}
+    QString getPrzedmiot() {return m_aktPrzedmiot;}
     int getNumBlok() {return m_numBlok;}
-    virtual void readData() = 0;
+    virtual void wczytajDane() = 0;
 
 signals:
 };
