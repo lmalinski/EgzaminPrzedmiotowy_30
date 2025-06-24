@@ -1,6 +1,6 @@
-#include "program.h"
+#include "W_USLUG\program.h"
+#include "W_DANYCH\importerBlokowy.h"
 #include <QDebug>
-#include "importerBlokowy.h"
 
 // KONSTRUKTORY I SETUP:
 

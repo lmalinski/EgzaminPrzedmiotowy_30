@@ -1,7 +1,0 @@
-Kolekcje standardowe.
-omówić std::array, std::vector i std::list.
-omówić czym jest i do czego służy iterator.
-wyjaśnić składnię i działanie wiązania strukturalnego w C++. 
-omówić inny (niż powyższe) wybrany typ kolekcji standardowej.
-przedyskutować dobór typu kontenera w programowaniu (w tym, kiedy uzasadnione jest używanie zwykłych tablic).
-

@@ -1,6 +1,0 @@
-Konstruktory, destruktory i instancje stałe.
-wyjaśnić pojęcia i przeznaczenie konstruktora, destruktora i listy inicjalizacyjnej.
-wymienić typy i przeznaczenie poznanych konstruktorów.
-wyjaśnić znaczenie specyfikatora const po nazwie metody i mutable przed nazwą pola.
-podać i omówić praktyczny przykład pracy z instancją chronioną przed zapisem.
-przedyskutować dobór sposobu inicjalizacji pól klasy.

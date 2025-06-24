@@ -1,8 +1,0 @@
-Programowanie funkcyjne.
-omówić podstawowe założenia programowania funkcyjnego.
-omówić czym są widoki i adaptery biblioteki std::ranges.
-omówić leniwe przetwarzanie widoków kaskadowych nałożonych na kontener.
-podać i omówić przykład widoku transformującego ze stanem wewnętrznym.
-przedyskutować korzystanie z funkcji bibliotecznych jako alternatywy dla ręcznego 
-implementowania typowych algorytmów przetwarzających dane.
-

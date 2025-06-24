@@ -10,26 +10,26 @@ CONFIG += c++17
 
 
 SOURCES += \
-    importer.cpp \
-    importerBlokowy.cpp \
-    importerJednostkowy.cpp \
+    W_DANYCH\importer.cpp \
+    W_DANYCH\importerBlokowy.cpp \
+    W_DANYCH\importerJednostkowy.cpp \
     main.cpp \
-    mainwindow.cpp \
-    program.cpp \
-    pytanie.cpp \
-    urn.cpp
+    W_PREZENTACJI\mainwindow.cpp \
+    W_USLUG\program.cpp \
+    W_DANYCH\pytanie.cpp \
+    W_DANYCH\urn.cpp
 
 HEADERS += \
-    importer.h \
-    importerBlokowy.h \
-    importerJednostkowy.h \
-    mainwindow.h \
-    program.h \
-    pytanie.h \
-    urn.h
+    W_DANYCH\importer.h \
+    W_DANYCH\importerBlokowy.h \
+    W_DANYCH\importerJednostkowy.h \
+    W_PREZENTACJI\mainwindow.h \
+    W_USLUG\program.h \
+    W_DANYCH\pytanie.h \
+    W_DANYCH\urn.h
 
 FORMS += \
-    mainwindow.ui
+    W_PREZENTACJI\mainwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

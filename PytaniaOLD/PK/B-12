@@ -1,8 +1,0 @@
-Serializacja złożonych obiektów.
-omówić czym różni się serializacja tekstowa od binarnej.
-omówić metody serializacji obiektu spójnego.
-omówić metodę serializacji obiektu z zasobem zewnętrznym.
-podać i omówić przykład serializacji kaskadowej przy dziedziczeniu/kompozycji.
-porównać trudność wykonania serializacji obiektów będących w relacjach ścisłych 
-z serializacją obiektów w relacjach luźnych (asocjacja/agregacja).
-

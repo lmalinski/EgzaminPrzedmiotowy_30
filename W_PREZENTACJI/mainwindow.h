@@ -12,8 +12,8 @@
 #include <QComboBox>
 #include <QCheckBox>
 
-#include "program.h"
-#include "pytanie.h"
+#include "W_USLUG\program.h"
+#include "W_DANYCH\pytanie.h"
 
 namespace Ui {
 class MainWindow;

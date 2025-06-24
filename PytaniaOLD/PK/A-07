@@ -1,6 +1,0 @@
-Operacje bitowe.
-wymienić i omówić podstawowe operacje bitowe dostępne w C/C++.
-zdefiniować pojęcie i podać przykład maski bitowej.
-podać przykłady ustawienia zadanego bitu w stan niski/wysoki.
-podać i omówić przykład definiowania masek bitych przy pomocy typu wyliczeniowego.
-przedyskutować sposoby kompresji danych z użyciem operacji bitowych.

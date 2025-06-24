@@ -1,6 +1,0 @@
-Dynamiczna alokacja pamięci.
-omówić działanie operatorów new i delete i „czas życia” alokacji.
-omówić zjawisko wycieku pamięci.
-wymienić i omówić rodzaje alokacji tablic wielowymiarowych.
-podać i omówić przykład wycieku pamięci wskutek wyrzucenia wyjątku.
-przedyskutować rozpoznawanie typu alokacji i rozmiarów dynamicznej tablicy wielowymiarowej.

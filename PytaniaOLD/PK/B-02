@@ -1,7 +1,0 @@
-Kopiowanie i przenoszenie instancji z zasobami zewnętrznymi.
-omówić składnię mechanizmów kopiowania i przenoszenia.
-omówić pojęcia kopia płytka, głęboka i leniwa.
-wyjaśnić, kiedy następuje potrzeba definiowania własnej wersji kopiowania/przenoszenia.
-omówić na przykładzie czym różni się kopiowanie od przenoszenia.
-przedyskutować, kiedy można, a kiedy nie wykonać kopii płytkiej lub binarnej instancji.
-

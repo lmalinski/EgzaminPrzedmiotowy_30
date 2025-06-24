@@ -2,8 +2,8 @@
 #define PROGRAM_H
 
 #include <QObject>
-#include "urn.h"
-#include "importer.h"
+#include "W_DANYCH\urn.h"
+#include "W_DANYCH\importer.h"
 
 
 class Program : public QObject
