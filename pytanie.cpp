@@ -25,16 +25,32 @@ Pytanie::Pytanie(QString &rawData, int num, int blok)
 
 QString Pytanie::getTresc()
 {
-    QString tresc = "<p style=\"color:black\"><u>" + QString::number(m_num + 1) + ". " + m_head + "</u></p>";
-    tresc += " <p style=\"color:red\">" + m_know + "</p>";
-    tresc += " <p style=\"color:green\">" + m_underst + "</p>";
-    tresc += " <p style=\"color:blue\">" + m_discus + "</p>";
-    return tresc;
+    return getHead() + getKnow() + getUnderst() + getDiscus();
 }
 
 QString Pytanie::getPlainHead()
 {
     return m_head;
+}
+
+QString Pytanie::getHead()
+{
+    return "<p style=\"color:black\"><u>" + QString::number(m_num + 1) + ". " + m_head + "</u></p>";
+}
+
+QString Pytanie::getKnow()
+{
+    return " <p style=\"color:red\">" + m_know + "</p>";
+}
+
+QString Pytanie::getUnderst()
+{
+    return " <p style=\"color:green\">" + m_underst + "</p>";
+}
+
+QString Pytanie::getDiscus()
+{
+    return " <p style=\"color:blue\">" + m_discus + "</p>";
 }
 
 

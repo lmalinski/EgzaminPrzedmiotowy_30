@@ -1,4 +1,4 @@
-#include "importerblokowy.h"
+#include "importerBlokowy.h"
 #include <QDir>
 
 ImporterBlokowy::ImporterBlokowy(QObject *parent, QString dir)

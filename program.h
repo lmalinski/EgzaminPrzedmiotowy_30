@@ -18,7 +18,7 @@ public:
     QString getAktPrzedmiot();
     QStringList getListaPrzedmiotow();
     void odznaczPytania(QVector<int>,int);
-
+    void zwrocAktWylosowane(int blok);
 
 signals:
     void wypisz(QVector<Pytanie>&,int);

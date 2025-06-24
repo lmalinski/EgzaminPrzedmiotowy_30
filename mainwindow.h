@@ -37,6 +37,7 @@ private slots:
     void wypiszFull(QVector<Pytanie>&,int);
     void on_pushWybBA_clicked();
     void on_pushWybBB_clicked();
+    void on_checkDecompose_stateChanged(int state);
 
 private:
     static const int MAX_LICZ_BLOKOW = 2;
@@ -47,6 +48,8 @@ private:
     void makeTable(int,int);
     QVector<int> chkToRemove(int);
     void disableChBoxes(int);
+    void wyborPytan(int blok);
+    void genrujPytania(int blok);
 
     Ui::MainWindow *ui;
     Program m_uslugi;

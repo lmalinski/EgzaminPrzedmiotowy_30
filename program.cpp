@@ -1,11 +1,14 @@
 #include "program.h"
 #include <QDebug>
-//#include "importerJednostkowy.h"
-#include "importerblokowy.h"
+#include "importerBlokowy.h"
+
+// KONSTRUKTORY I SETUP:
 
 Program::Program(QObject *parent)
     : QObject{parent},m_BazaPytan(new ImporterBlokowy(this,"PytaniaNEW"))
 {}
+
+// METODY - USŁUGI:
 
 void Program::setPrzedmiot(QString nazwa)
 {
@@ -56,4 +59,11 @@ void Program::odznaczPytania(QVector<int> pytDoOdznaczenia, int blok)
     for(auto idx:pytDoOdznaczenia)
         m_WylosPyt[blok].erase(m_WylosPyt[blok].begin()+idx);
     emit wypisz(m_WylosPyt[blok], blok);
+}
+
+void Program::zwrocAktWylosowane(int blok)
+{
+    assert(blok < MAX_LICZ_BLOKOW);
+    if(m_WylosPyt[blok].size() == MIN_LICZ_PYT)
+        emit wypisz(m_WylosPyt[blok], blok);
 }

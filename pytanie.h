@@ -16,6 +16,10 @@ public:
     Pytanie(QString &rawData, int num, int blok);
     QString getTresc();
     QString getPlainHead();
+    QString getHead();
+    QString getKnow();
+    QString getUnderst();
+    QString getDiscus();
     int getNum () {return m_num;}
     int getBlok () {return m_blok;}
 };
