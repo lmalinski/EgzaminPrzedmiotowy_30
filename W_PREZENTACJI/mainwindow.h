@@ -49,7 +49,7 @@ private:
     void wylaczCheckBokxy(int);
     void wyborPytan(int blok);
     void genrujPytania(int blok);
-    void wypiszFull(QVector<Pytanie>&,int);
+    void wypiszPelnePytania(QVector<Pytanie>&,int);
 
     Ui::MainWindow *ui;
     Program m_uslugi;
