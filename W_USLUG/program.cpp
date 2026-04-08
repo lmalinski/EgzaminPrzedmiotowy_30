@@ -88,11 +88,13 @@ void Program::odznaczPytania(QVector<int> pytDoOdznaczenia, int blok)
 void Program::ponownieWypiszWylosowane(int blok)
 {
     Q_ASSERT_X(blok < MAX_LICZ_BLOKOW,"Program/ponownieWypiszWylosowane","Nieprawidlowy numer bloku");
+
     // Ponowne zlecenie działa tylko jesli są wylosowane pytania i jest ich już dokłądnie 3. W innych
     // przypadkach ta usługa jest ignorowana.
     if(m_WylosPyt[blok].size() == MIN_LICZ_PYT)
         emit wypisz(m_WylosPyt[blok], blok);
     else return;
+
     // Powyżej celowo zaznaczono pominięcie wypisywania, choć else jest w tym przypadku
     // zbędny. Chodzi o wyraźne zaznaczenie, że w razie niewłaściwej liczby pytań ta usługa ma
     // nie robić nic!

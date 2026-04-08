@@ -1,5 +1,5 @@
 Kopiowanie instancji|
-Omówić wymienić i omówić składnię nagłówka narzędzi w klasach służących do definiowania kopii i przenoszenia instancji|
+Wymienić i omówić składnię nagłówka narzędzi w klasach służących do definiowania kopii i przenoszenia instancji|
 Na przykładzie wytłumaczyć czym różni się kopiowanie od przenoszenia i konstruktor kopiujący od kopiującego operatora przypisania|
 Porównać działanie kopii płytkiej głębokiej i leniwej
 @
@@ -15,7 +15,7 @@ Przedyskutować, kiedy w programie powinniśmy korzystać z lambdy, funktora, a 
 @
 Uniwersalne wskazanie kodu wywoływalnego|
 Wyjaśnić czym jest i do czego służy std::function|
-Na przykładzie kodu pokazać w jaki sposób działa lista przechwytywania w lambdzie|
+Na przykładzie kodu uzyskać polimorfizm proceduralny dynamiczny z umyciem std::function|
 Przedyskutować wyższość std::function nad wskaźnikiem do funkcji
 @
 Szablony|
@@ -30,7 +30,7 @@ Przedyskutować na przykładach do jakich zastosowań należy użyć poszczegól
 @
 Iteratory|
 Wyjaśnić pojęcie iteratora i wymienić poznane jego typy|
-Na przykładzie kodu zademonstrować typowe operacje wykonywane integratorem na wybornym przez egzaminującego typie kolekcji|
+Na przykładzie kodu zademonstrować typowe operacje wykonywane iteratorem na wybornym przez egzaminującego typie kolekcji|
 Przedyskutować w jakich sytuacjach może dojść do dezaktualizacji iteratora i jak sobie z tym radzić
 @
 Wiązanie strukturalne|
