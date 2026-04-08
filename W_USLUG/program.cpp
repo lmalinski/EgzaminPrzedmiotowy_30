@@ -7,7 +7,7 @@
 // W konstruktorze podajemy katalog docelowy, w którym importer
 // ma szukać przedmiotów i pytań:
 Program::Program(QObject *parent)
-    : QObject{parent},m_BazaPytan(new ImporterBlokowy(this,"PytaniaNEW"))
+    : QObject{parent},m_BazaPytan(new ImporterBlokowy(this,"Pytania"))
 {}
 
 // METODY - USŁUGI:
