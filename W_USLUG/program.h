@@ -2,7 +2,7 @@
 #define PROGRAM_H
 
 #include <QObject>
-#include "W_DANYCH\urn.h"
+
 #include "W_DANYCH\bazapytan.h"
 
 class Program : public QObject
@@ -25,9 +25,7 @@ signals:
 
 private:
     static const int MAX_LICZ_BLOKOW = 2;
-    static const int MIN_LICZ_PYT = 3;
-    BazaPytan * m_BazaPytan;
-    std::array<Urn,MAX_LICZ_BLOKOW> m_urnyDoLosowania;
+    BazaPytan * m_BazaPytan =nullptr;
     std::array<QVector<Pytanie>,MAX_LICZ_BLOKOW> m_WylosPyt;
 
 };

@@ -7,9 +7,11 @@ DONE:
 - Usun z hierarchi importer QObject -> W_DANYCH nie powina uzywac mechanizmów qt w ogóle.
 - Dodaj nową klasę BazaPytan w wartwie danych, która bedzie przechowywać i katalogować pytania. Chwilowo jako czystą fasade dla importera.
 - przenies przechowyanie pytan z importer do bazaPytan.
+- Przebuduj program tak aby to  bazaPytan dawala funkcjonalnosc losowania.
 
 CURRENT:
 - Przemysl i popraw budowe i interfejs bazy pytan w kontekscie nowej oragnizacji pytan. Importer ma wczytywac zadane pytania z pliku, baza ma je organizowac w programie)
+
 
 TODO:
 - Dostsosuj nowy importer blokowy pytań do nowej organizacji pytan.
@@ -21,4 +23,3 @@ TODO:
 - Dodaj funcjonalnosć logowania histori egzaminu.
 - Usuń przenkanie warstw -> klasa pytanie nie moze być dostępna w warstwie prezentacji.
 - Zaktualizuj pliki pytań -> do każdego semstru dwa osobne pliki W i Z
-- Przebuduj program tak aby to  bazaPytan dawala funkcjonalnosc losowania.???

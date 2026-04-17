@@ -4,6 +4,7 @@
 #include <QString>
 
 enum class TypPytania{Wiedza,Zrozumienie};
+const char* const NAZWY_KATALOGOW[] = {"Wiedza","Zrozumienie"};
 
 class Pytanie
 {
