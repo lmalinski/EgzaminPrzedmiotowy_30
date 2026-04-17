@@ -1,0 +1,17 @@
+DONE:
+1. Usuń funkcjonalność "Rozbij pytania" - nie jest potrzebna w nowej wersji.
+
+TODO:
+2. Usuń dwustanowe losowanie pytań -> zastąp pełnym wypisywaniem wszystkich pytań -> tak będzie w docelowej wersji
+3. Chwilowo zablokuj losowanie dodatkowych pytań.
+
+4. Przebuduj klase pytanie na treść + typ pytania (W/Z).
+5. Zaktualizuj pliki pytań -> do każdego semstru dwa osobne pliki W i Z
+6. Dostsosuj nowy importer pytań i nową bazę pytań.
+7. Opracuj lowoanie pytan dla obu pul na chwilę bez podzbiorów.
+8. Przebuduj losowanie pytania tak aby dzielił daną pule na równe 3/6 podzbiorów i losował z tych podzbiorów.
+9. Dodaj wypiswanie numeru pytania w formie sygnatury WX i ZY
+10. Dodaj algorytm losowania dodatkowych pytań dla obu pul.
+11. Dodaj funkcjonalnosć przywracania pytań (jak w egzaminie dyplomowym)
+12. Dodaj funcjonalnosć logowania histori egzaminu.
+13. Usuń przenkanie warstw -> klasa pytanie nie moze być dostępna w warstwie prezentacji.

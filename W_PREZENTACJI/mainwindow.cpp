@@ -78,41 +78,13 @@ void MainWindow::wypiszPelnePytania(QVector<Pytanie> &pytania, int blok)
     m_pytDisp[blok]->hide();
     m_pytDispPelny[blok]->show();
     m_pytDispPelny[blok]->setEnabled(true);
-
-    // Kompozycja treści do wyświetlenia – dwa warianty:
-    // 1. Wyświetlenie pytań z rozbiciem (gdy zaznaczony checkDekomponuj),
-    // 2. Wyświetlenie pełnych pytań tematycznie (gdy checkDekomponuj jest odznaczony).
-    //
-    // Tryb standardowy (checkDekomponuj wyłączony):
-    //   Czerwone 1 → Zielone 1 → Niebieskie 1 → Czerwone 2 → ...
-    //
-    // Tryb z rozbiciem (checkDekomponuj włączony):
-    //   Czerwone 1 → Czerwone 2 → Czerwone 3 → Zielone 1 → ...
-    //
-    // Tryb z rozbiciem przyspiesza ocenianie – najpierw pytania kluczowe (np. „czerwone”),
-    // a dopiero potem pytania podnoszące ocenę. Tryb standardowy jest bardziej naturalny
-    // dydaktycznie, ale może wydłużyć egzamin.
     QString tresc = "";
-    if(ui->checkDekomponuj->isChecked()) // Tryb z rozbiciem
-    {
-        for(int pyt = 0; pyt < pytania.size(); pyt++)
-            tresc += pytania[pyt].getNaglowek();
-        for(int pyt = 0; pyt < pytania.size(); pyt++)
-            tresc += pytania[pyt].getWiedza();
-        for(int pyt = 0; pyt < pytania.size(); pyt++)
-            tresc += pytania[pyt].getZrozumienie();
-        for(int pyt = 0; pyt < pytania.size(); pyt++)
-            tresc += pytania[pyt].getDyskusja();
-    }
-    else // Tryb standardowy
-    {
-        for(int pyt = 0; pyt < pytania.size(); pyt++)
-            tresc += pytania[pyt].getTresc();
-    }
+    for(int pyt = 0; pyt < pytania.size(); pyt++)
+        tresc += pytania[pyt].getTresc();
+
 
     // Wyświetlenie treści na ekranie:
     m_pytDispPelny[blok]->setText(tresc);
-    ui->checkDekomponuj->setEnabled(true);
 }
 
 // Metoda przygotowująca tabelę pytań, gdy jest ich więcej niż 3:
@@ -236,12 +208,6 @@ void MainWindow::wypisz(QVector<Pytanie>& pytania, int blok)
 
         // Aktywacja przycisku zatwierdzającego wybór:
         m_wybPush[blok]->setEnabled(true);
-
-        // Dezaktywacja checkboxa do dekompozycji pytań – istotne, ponieważ
-        // zmiana jego stanu powoduje aktywną zmianę sposobu wyświetlania
-        // treści pytań. Nie powinno być to możliwe, dopóki wybór pytań do wypisania
-        // nie zostanie zakończony:
-        ui->checkDekomponuj->setEnabled(false);
     }
 }
 
@@ -303,15 +269,4 @@ void MainWindow::on_pushWczytaj_clicked()
     m_uslugi.wczytajPytania();
     ui->pushWczytaj->setEnabled(false);
     on_pushWyczysc_clicked();
-}
-
-// Metoda reakcji na zmianę sposobu wypisywania pytań. Sam stan checkboxa jest
-// sprawdzany przy wypisywaniu, ale ta reakcja dodatkowo wywołuje usługę
-// ponownego wypisania pytań (które powinny być już na ekranie).
-// Odwołujemy się do warstwy usług, ponieważ warstwa prezentacji (GUI) nie
-// przechowuje trwale wylosowanych pytań – są one przekazywane tymczasowo.
-void MainWindow::on_checkDekomponuj_stateChanged(int state)
-{
-    Q_UNUSED(state);
-    m_uslugi.ponownieWypiszWylosowane(ui->tabBloki->currentIndex());
 }

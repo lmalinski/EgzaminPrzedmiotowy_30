@@ -33,7 +33,6 @@ private slots:
     void on_pushWyczysc_clicked();
     void on_przedmiot_currentTextChanged(const QString &spec);
     void on_pushWczytaj_clicked();
-    void on_checkDekomponuj_stateChanged(int state);
     void on_pushWybBA_clicked();
     void on_pushWybBB_clicked();
     void wypisz(QVector<Pytanie>&,int);

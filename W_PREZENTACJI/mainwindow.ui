@@ -110,19 +110,6 @@
       <string>WYCZYŚĆ</string>
      </property>
     </widget>
-    <widget class="QCheckBox" name="checkDekomponuj">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>410</y>
-       <width>161</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Rozbij pytania</string>
-     </property>
-    </widget>
    </widget>
    <widget class="QTabWidget" name="tabBloki">
     <property name="geometry">

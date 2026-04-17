@@ -38,3 +38,4 @@ DISTFILES += \
     Pytania/PK/BlokA \
     Pytania/PK/BlokB \
     Pytania/PPK/BlokA \
+    Pytania/TODO
