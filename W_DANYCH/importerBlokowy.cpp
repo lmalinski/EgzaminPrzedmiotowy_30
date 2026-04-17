@@ -12,10 +12,10 @@ ImporterBlokowy::ImporterBlokowy(QString dir)
 
 // Metoda dokonująca pełnego wczytania wszystkich bloków dla wskazanego przedmiotu.
 // (ISTOTNE: zmiana przedmiotu usuwa aktualną bazę pytań i wczytuje nową).
-void ImporterBlokowy::wczytajDane()
+std::vector<QVector<Pytanie>> ImporterBlokowy::wczytajDane()
 {
-    // Czyszczenie aktualnej bazy:
-    m_bloki.clear();
+    // Przygotowanie kontenera na pytania:
+    std::vector<QVector<Pytanie>> bloki;
 
     // Ustalenie katalogu z blokami dla zadanego przedmiotu:
     QString egzPath(m_dir + "/" + m_aktPrzedmiot);
@@ -32,17 +32,17 @@ void ImporterBlokowy::wczytajDane()
 
     // Wczytywanie bloków do bazy:
     Q_ASSERT_X(numFiles > 0, "ImporterBlokowy/wczytajDane", "Brak plików z blokami w katalogu");
-    QVector<Pytanie> blok;
+    QVector<Pytanie> pojBlok;
     for(int idx = 0; idx < numFiles; idx++)
     {
-        blok.clear();
+        pojBlok.clear();
         QString pytPath = egzPath + "/" + files.at(idx);
-        wczytajBlok(pytPath, blok, idx);
-        m_bloki.push_back(blok);
+        wczytajBlok(pytPath, pojBlok, idx);
+        bloki.push_back(pojBlok);
     }
 
     // Zapisanie faktycznej liczby wczytanych bloków:
-    m_numBlok = m_bloki.size();
+    return bloki;
 }
 
 void ImporterBlokowy::wczytajBlok(QString &path, QVector<Pytanie> &dst, int numBlok)

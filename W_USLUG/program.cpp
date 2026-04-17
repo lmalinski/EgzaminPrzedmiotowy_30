@@ -22,7 +22,7 @@ void Program::setPrzedmiot(QString nazwa)
 void Program::wczytajPytania()
 {   
     m_BazaPytan->wczytajDane();
-    int numBlok = m_BazaPytan->getNumBlok();
+    int numBlok = m_BazaPytan->getLiczbaBlokow();
     for (int blok = 0; blok < numBlok; blok++)
         m_urnyDoLosowania[blok].setLiczElem(m_BazaPytan->getBlok(blok).size());
 }
@@ -30,7 +30,7 @@ void Program::wczytajPytania()
 // USŁUGA "forwardująca" liczbę bloków zapisaną w bazie:
 int Program::getLiczbaBlokow()
 {
-    return m_BazaPytan->getNumBlok();
+    return m_BazaPytan->getLiczbaBlokow();
 }
 
 // USŁUGA losująca pytania dla danego bloku. Przyjmuje liczbę dodatkowych pytań, gdyż

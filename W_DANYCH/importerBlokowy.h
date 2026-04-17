@@ -12,7 +12,7 @@ class ImporterBlokowy : public Importer
 public:
     explicit ImporterBlokowy(QString dir);
     ~ImporterBlokowy(){}
-    void wczytajDane() override;
+    std::vector<QVector<Pytanie>> wczytajDane() override;
 };
 
 #endif // IMPORTERBLOKOWY_H

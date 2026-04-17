@@ -6,10 +6,10 @@ DONE:
 - Przygotuj nową strukturę plików z pytaniami dla kazdego bloku (podział Wieda/Zrozumienie) + korekta importera do nowych nazw (narazie tylko wiedza).
 - Usun z hierarchi importer QObject -> W_DANYCH nie powina uzywac mechanizmów qt w ogóle.
 - Dodaj nową klasę BazaPytan w wartwie danych, która bedzie przechowywać i katalogować pytania. Chwilowo jako czystą fasade dla importera.
+- przenies przechowyanie pytan z importer do bazaPytan.
 
 CURRENT:
 - Przemysl i popraw budowe i interfejs bazy pytan w kontekscie nowej oragnizacji pytan. Importer ma wczytywac zadane pytania z pliku, baza ma je organizowac w programie)
-
 
 TODO:
 - Dostsosuj nowy importer blokowy pytań do nowej organizacji pytan.
