@@ -3,14 +3,14 @@
 
 #include <QObject>
 #include "W_DANYCH\urn.h"
-#include "W_DANYCH\importer.h"
-
+#include "W_DANYCH\bazapytan.h"
 
 class Program : public QObject
 {
     Q_OBJECT
 public:
     explicit Program(QObject *parent = nullptr);
+    ~Program() {delete m_BazaPytan;}
     void setPrzedmiot(QString nazwa);
     void wczytajPytania();
     int getLiczbaBlokow();
@@ -26,7 +26,7 @@ signals:
 private:
     static const int MAX_LICZ_BLOKOW = 2;
     static const int MIN_LICZ_PYT = 3;
-    Importer * m_BazaPytan;
+    BazaPytan * m_BazaPytan;
     std::array<Urn,MAX_LICZ_BLOKOW> m_urnyDoLosowania;
     std::array<QVector<Pytanie>,MAX_LICZ_BLOKOW> m_WylosPyt;
 

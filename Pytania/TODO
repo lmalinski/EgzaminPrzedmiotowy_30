@@ -3,11 +3,16 @@ DONE:
 - Chwilowo zablokuj losowanie dodatkowych pytań.
 - Usuń dwustanowe losowanie pytań -> zastąp pełnym wypisywaniem wszystkich pytań -> tak będzie w docelowej wersji
 - Przebuduj klase pytanie na treść + typ pytania (W/Z).
+- Przygotuj nową strukturę plików z pytaniami dla kazdego bloku (podział Wieda/Zrozumienie) + korekta importera do nowych nazw (narazie tylko wiedza).
+- Usun z hierarchi importer QObject -> W_DANYCH nie powina uzywac mechanizmów qt w ogóle.
+- Dodaj nową klasę BazaPytan w wartwie danych, która bedzie przechowywać i katalogować pytania. Chwilowo jako czystą fasade dla importera.
+
+CURRENT:
+- Przemysl i popraw budowe i interfejs bazy pytan w kontekscie nowej oragnizacji pytan. Importer ma wczytywac zadane pytania z pliku, baza ma je organizowac w programie)
+
 
 TODO:
-
-- Zaktualizuj pliki pytań -> do każdego semstru dwa osobne pliki W i Z
-- Dostsosuj nowy importer pytań i nową bazę pytań.
+- Dostsosuj nowy importer blokowy pytań do nowej organizacji pytan.
 - Opracuj lowoanie pytan dla obu pul na chwilę bez podzbiorów.
 - Przebuduj losowanie pytania tak aby dzielił daną pule na równe 3/6 podzbiorów i losował z tych podzbiorów.
 - Dodaj wypiswanie numeru pytania w formie sygnatury WX i ZY
@@ -15,3 +20,5 @@ TODO:
 - Dodaj funkcjonalnosć przywracania pytań (jak w egzaminie dyplomowym)
 - Dodaj funcjonalnosć logowania histori egzaminu.
 - Usuń przenkanie warstw -> klasa pytanie nie moze być dostępna w warstwie prezentacji.
+- Zaktualizuj pliki pytań -> do każdego semstru dwa osobne pliki W i Z
+- Przebuduj program tak aby to  bazaPytan dawala funkcjonalnosc losowania.???

@@ -1,5 +1,4 @@
 #include "W_USLUG\program.h"
-#include "W_DANYCH\importerBlokowy.h"
 #include <QDebug>
 
 // KONSTRUKTORY I SETUP:
@@ -7,7 +6,7 @@
 // W konstruktorze podajemy katalog docelowy, w którym importer
 // ma szukać przedmiotów i pytań:
 Program::Program(QObject *parent)
-    : QObject{parent},m_BazaPytan(new ImporterBlokowy(this,"Pytania"))
+    : QObject{parent},m_BazaPytan(new BazaPytan("Pytania"))
 {}
 
 // METODY - USŁUGI:

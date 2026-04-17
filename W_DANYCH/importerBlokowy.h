@@ -8,10 +8,10 @@
 
 class ImporterBlokowy : public Importer
 {
-    Q_OBJECT
     void wczytajBlok(QString &path, QVector<Pytanie> &dst, int numBlok);
 public:
-    explicit ImporterBlokowy(QObject *parent, QString dir);
+    explicit ImporterBlokowy(QString dir);
+    ~ImporterBlokowy(){}
     void wczytajDane() override;
 };
 

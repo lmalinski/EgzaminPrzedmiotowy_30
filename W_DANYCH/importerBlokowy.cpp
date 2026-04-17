@@ -3,8 +3,8 @@
 
 // KONSTRUKTOR:
 
-ImporterBlokowy::ImporterBlokowy(QObject *parent, QString dir)
-    : Importer(parent, dir)
+ImporterBlokowy::ImporterBlokowy(QString dir)
+    : Importer(dir)
 {}
 
 // GŁÓWNE ALGORYTMY WCZYTYWANIA
@@ -22,8 +22,8 @@ void ImporterBlokowy::wczytajDane()
     QDir pytania = QDir::current();
     pytania.cd(egzPath);
 
-    // Uzyskanie listy nazw plików z pytaniami pasujących do formatu "Blok*":
-    QString filter = "Blok*";
+    // Uzyskanie listy nazw plików z pytaniami pasujących do formatu "Wiedza*":
+    QString filter = "Wiedza*";
     QStringList filters = {filter};
     pytania.setFilter(QDir::Files);
     pytania.setNameFilters(filters);

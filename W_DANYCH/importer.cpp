@@ -4,8 +4,8 @@
 
 // KONSTRUKTORY:
 
-Importer::Importer(QObject *parent, QString dir)
-    : QObject{parent}, m_dir(dir)
+Importer::Importer(QString dir)
+    : m_dir(dir)
 {
     wykryjPrzedmioty();
     m_aktPrzedmiot = m_listaPrzedmiotow.first();
