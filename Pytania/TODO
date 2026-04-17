@@ -8,7 +8,7 @@ DONE:
 - Dodaj nową klasę BazaPytan w wartwie danych, która bedzie przechowywać i katalogować pytania. Chwilowo jako czystą fasade dla importera.
 - przenies przechowyanie pytan z importer do bazaPytan.
 - Przebuduj program tak aby to  bazaPytan dawala funkcjonalnosc losowania.
-- Dostsosuj nowy importer do mozlisowsci wczytywania roznych blokow (wiedza/zrozumienie). Zleca BazaPytan.
+- Dostsosuj nowy importer do mozliwosci wczytywania roznych blokow (wiedza/zrozumienie). Zleca BazaPytan.
 - Rozbuduj BazePytan o przechowyanie obu typow pytan.
 - Opracuj lowoanie pytan dla obu pul na chwilę bez podzbiorów.
 - Rozbuduj GUI o zadawanie dodatkowych pytan dla obu typow.
@@ -17,6 +17,7 @@ CURRENT:
 - Zaktualizuj tresci plików pytań.
 
 TODO:
+- Dodaj nowy system eliminacji pytań
 - Przebuduj losowanie pytania tak aby dzielił daną pule na równe 3/6 podzbiorów i losował z tych podzbiorów.
 - Dodaj wypiswanie numeru pytania w formie sygnatury WX i ZY
 - Przebuduj algorytm losowania dodatkowych pytań dla obu pul tak aby pasował do podzbiorów
