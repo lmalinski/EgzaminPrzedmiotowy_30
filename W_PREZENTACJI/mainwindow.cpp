@@ -13,11 +13,9 @@
 
     // Tablice wskaźników do sterowania zbiorowego. Pozwalają odwoływać się do kontrolek po numerze,
     // co ułatwia proceduralną modyfikację interfejsu (np. w pętli) i realizację zasady DRY:
-    m_pytDisp      = {ui->pytA, ui->pytB};
     m_pytDispPelny = {ui->pytAPelny, ui->pytBPelny};
     m_pytLicz      = {ui->liczA, ui->liczB};
     m_genPush      = {ui->pushGenBA, ui->pushGenBB};
-    m_wybPush      = {ui->pushWybBA, ui->pushWybBB};
     m_tabs         = {ui->tabA, ui->tabB};
 
     // Ustawienie comboboxa z nazwami przedmiotów:
@@ -56,115 +54,11 @@ void MainWindow::wylaczWszystko()
 {
     for(int blok = 0; blok < MAX_LICZ_BLOKOW; blok++)
     {
-        m_pytDisp[blok]->setEnabled(false);
         m_pytDispPelny[blok]->setEnabled(false);
         m_pytLicz[blok]->setEnabled(false);
         m_genPush[blok]->setEnabled(false);
         m_tabs[blok]->setEnabled(false);
     }
-}
-
-// Metoda wypisująca pełne wersje pytań.
-// Program zawiera dwa widgety w tej samej lokalizacji geometrycznej służące do wypisywania pytań:
-// 1. QTextBrowser – umożliwia wyświetlanie pełnych pytań w formacie HTML,
-// 2. QTableWidget – umożliwia prezentację pytań w formie tabeli z możliwością dodania checkboxów.
-// Widgety te są umieszczone w tych samych miejscach na zakładkach blokowych,
-// a widoczny jest zawsze tylko jeden z nich – zależnie od trybu wyświetlania pytań.
-// Poniższa metoda wyświetla tylko QTextBrowser (ukrywając tabelę), ponieważ służy do prezentacji
-// pełnych wersji wybranych pytań:
-void MainWindow::wypiszPelnePytania(QVector<Pytanie> &pytania, int blok)
-{
-    // Przełączenie widoczności na QTextBrowser:
-    m_pytDisp[blok]->hide();
-    m_pytDispPelny[blok]->show();
-    m_pytDispPelny[blok]->setEnabled(true);
-    QString tresc = "";
-    for(int pyt = 0; pyt < pytania.size(); pyt++)
-        tresc += pytania[pyt].getTresc();
-
-
-    // Wyświetlenie treści na ekranie:
-    m_pytDispPelny[blok]->setText(tresc);
-}
-
-// Metoda przygotowująca tabelę pytań, gdy jest ich więcej niż 3:
-void MainWindow::tworzTabele(int blok, int num)
-{
-    // Parametryzacja wyglądu tabeli:
-    m_pytDisp[blok]->clear();
-    m_pytDisp[blok]->setEnabled(true);
-    m_pytDisp[blok]->setColumnCount(2);
-    m_pytDisp[blok]->setRowCount(num);
-    m_pytDisp[blok]->setColumnWidth(0, 50);
-    m_pytDisp[blok]->setColumnWidth(1, 990);
-    m_pytDisp[blok]->setHorizontalHeaderItem(0, new QTableWidgetItem("Usuń"));
-    m_pytDisp[blok]->setHorizontalHeaderItem(1, new QTableWidgetItem("Pytanie"));
-
-    // Wstawienie checkboxów do kolumny 0:
-    // Ważna uwaga – po dodaniu checkboxa do tabeli, trudno później odczytać jego stan bezpośrednio.
-    // Dlatego jego wskaźnik zapisywany jest do m_chkBoxes, aby później łatwo sprawdzać zaznaczenie.
-    // Dzięki relacji rodzic–dziecko, tabela zarządza cyklem życia checkboxów i usuwa je automatycznie.
-    for(int pyt = 0; pyt < num; pyt++)
-    {
-        // Aby checkbox był estetycznie wycentrowany w komórce tabeli,
-        // należy użyć QWidgeta z poziomym layoutem i osadzić w nim checkbox.
-        QWidget *pWidget = new QWidget();
-        QCheckBox *pCheckBox = new QCheckBox();
-        QHBoxLayout *pLayout = new QHBoxLayout(pWidget);
-        pLayout->addWidget(pCheckBox);
-        pLayout->setAlignment(Qt::AlignCenter);
-        pLayout->setContentsMargins(0, 0, 0, 0);
-        pWidget->setLayout(pLayout);
-
-        // Dodanie złożonego widgetu do komórki tabeli i zapisanie wskaźnika:
-        m_pytDisp[blok]->setCellWidget(pyt, 0, pWidget);
-        m_chkBoxes[blok].push_back(pCheckBox);
-    }
-}
-
-// Metoda sprawdzająca, które pytania zostały oznaczone do usunięcia:
-QVector<int> MainWindow::sprawdzDoUsuniecia(int blok)
-{
-    int numRows = m_pytDisp[blok]->rowCount();
-    QVector<int> pytNums;
-    for(int row = 0; row < numRows; row++)
-    {
-        if(m_chkBoxes[blok][row]->isChecked())
-            pytNums.push_back(row);
-    }
-    return pytNums;
-}
-
-// Metoda dezaktywująca wszystkie checkboxy w danym bloku:
-void MainWindow::wylaczCheckBokxy(int blok)
-{
-    int numRows = m_pytDisp[blok]->rowCount();
-    for(int row = 0; row < numRows; row++)
-        m_chkBoxes[blok][row]->setEnabled(false);
-}
-
-// Metoda usuwająca pytania oznaczone do usunięcia:
-void MainWindow::wyborPytan(int blok)
-{
-    // Sprawdzenie, które pytania zostały zaznaczone:
-    QVector<int> numToRem = sprawdzDoUsuniecia(blok);
-
-    // Sprawdzenie zgodności liczby zaznaczonych pytań z wartością w spinboxie.
-    // W razie niezgodności – komunikat i przerwanie działania.
-    if(numToRem.size() != m_pytLicz[blok]->value())
-    {
-        ui->statusBar->showMessage("Niewłaściwa liczba pytań!");
-        return;
-    }
-
-    // Jeśli liczba się zgadza – wyłącz checkboxy:
-    wylaczCheckBokxy(blok);
-
-    // Wywołanie funkcji usługowej do oczyszczenia listy pytań:
-    m_uslugi.odznaczPytania(numToRem, blok);
-
-    // Dezaktywacja przycisku wyboru:
-    m_wybPush[blok]->setEnabled(false);
 }
 
 // Metoda wywołująca generowanie pytań dla danego bloku.
@@ -174,7 +68,6 @@ void MainWindow::genrujPytania(int blok)
     // Dezaktywacja kontrolek GUI:
     m_genPush[blok]->setEnabled(false);
     m_pytLicz[blok]->setEnabled(false);
-    m_wybPush[blok]->setEnabled(false);
     ui->pushWyczysc->setEnabled(true);
 
     // Wywołanie usługi generowania pytań – przekazywana jest liczba *dodatkowych* pytań,
@@ -187,28 +80,15 @@ void MainWindow::genrujPytania(int blok)
 // Ta metoda jest slotem reagującym na sygnał „wypisz” z warstwy usług (program.cpp)
 void MainWindow::wypisz(QVector<Pytanie>& pytania, int blok)
 {
-    if(pytania.size() == MIN_LICZ_PYT) // Jeśli liczba wylosowanych pytań to 3 (wartość domyślna)
-    {
-        // Wypisanie pytań w QTextBrowser w pełnej wersji i formacie HTML
-        wypiszPelnePytania(pytania, blok);
-    }
-    else // Jeśli jest więcej pytań:
-    {
-        // Przełączenie wyświetlania na QTableWidget:
-        m_pytDisp[blok]->show();
-        m_pytDispPelny[blok]->hide();
+    // Przełączenie widoczności na QTextBrowser:
+    m_pytDispPelny[blok]->setEnabled(true);
+    QString tresc = "";
+    for(int pyt = 0; pyt < pytania.size(); pyt++)
+        tresc += pytania[pyt].getTresc();
 
-        // Ustalenie liczby pytań do wygenerowania tabeli:
-        int numPyt = pytania.size();
 
-        // Wygenerowanie tabeli i wypełnienie jej tylko nagłówkami pytań:
-        tworzTabele(blok, numPyt);
-        for(int pyt = 0; pyt < numPyt; pyt++)
-            m_pytDisp[blok]->setItem(pyt, 1, new QTableWidgetItem(pytania[pyt].getCzystyNaglowek()));
-
-        // Aktywacja przycisku zatwierdzającego wybór:
-        m_wybPush[blok]->setEnabled(true);
-    }
+    // Wyświetlenie treści na ekranie:
+    m_pytDispPelny[blok]->setText(tresc);
 }
 
 // Metoda dokonująca resetu stanu kontrolek i widgetów tekstowych po zakończeniu egzaminu:
@@ -219,9 +99,7 @@ void MainWindow::on_pushWyczysc_clicked()
         m_tabs[blok]->setEnabled(true);
         m_pytLicz[blok]->setEnabled(true);
         m_genPush[blok]->setEnabled(true);
-        m_pytDisp[blok]->clear();
         m_pytDispPelny[blok]->clear();
-        m_chkBoxes[blok].clear();
         m_pytLicz[blok]->setValue(0);
     }
     ui->tabBloki->setCurrentIndex(0);
@@ -239,16 +117,6 @@ void MainWindow::on_pushGenBA_clicked()
 void MainWindow::on_pushGenBB_clicked()
 {
     genrujPytania(1); // przekazuje numer bloku
-}
-
-void MainWindow::on_pushWybBA_clicked()
-{
-    wyborPytan(0); // przekazuje numer bloku
-}
-
-void MainWindow::on_pushWybBB_clicked()
-{
-    wyborPytan(1); // przekazuje numer bloku
 }
 
 // Metoda reakcji na zmianę przedmiotu – wywołuje usługę zmiany przedmiotu w warstwie usług

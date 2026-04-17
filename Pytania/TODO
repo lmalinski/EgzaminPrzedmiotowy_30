@@ -1,10 +1,9 @@
 DONE:
 1. Usuń funkcjonalność "Rozbij pytania" - nie jest potrzebna w nowej wersji.
+2. Chwilowo zablokuj losowanie dodatkowych pytań.
+3. Usuń dwustanowe losowanie pytań -> zastąp pełnym wypisywaniem wszystkich pytań -> tak będzie w docelowej wersji
 
 TODO:
-2. Usuń dwustanowe losowanie pytań -> zastąp pełnym wypisywaniem wszystkich pytań -> tak będzie w docelowej wersji
-3. Chwilowo zablokuj losowanie dodatkowych pytań.
-
 4. Przebuduj klase pytanie na treść + typ pytania (W/Z).
 5. Zaktualizuj pliki pytań -> do każdego semstru dwa osobne pliki W i Z
 6. Dostsosuj nowy importer pytań i nową bazę pytań.
