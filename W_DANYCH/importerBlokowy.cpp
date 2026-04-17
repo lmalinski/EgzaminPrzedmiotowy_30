@@ -12,7 +12,7 @@ ImporterBlokowy::ImporterBlokowy(QString dir)
 
 // Metoda dokonująca pełnego wczytania wszystkich bloków dla wskazanego przedmiotu.
 // (ISTOTNE: zmiana przedmiotu usuwa aktualną bazę pytań i wczytuje nową).
-std::vector<QVector<Pytanie>> ImporterBlokowy::wczytajDane()
+std::vector<QVector<Pytanie>> ImporterBlokowy::wczytajDane(TypPytania typ)
 {
     // Przygotowanie kontenera na pytania:
     std::vector<QVector<Pytanie>> bloki;
@@ -22,8 +22,8 @@ std::vector<QVector<Pytanie>> ImporterBlokowy::wczytajDane()
     QDir pytania = QDir::current();
     pytania.cd(egzPath);
 
-    // Uzyskanie listy nazw plików z pytaniami pasujących do formatu "Wiedza*":
-    QString filter = "Wiedza*";
+    // Uzyskanie listy nazw plików z pytaniami pasujących do formatu "typ*":
+    QString filter = QString(NAZWY_KATALOGOW[(int)typ]) +"*";
     QStringList filters = {filter};
     pytania.setFilter(QDir::Files);
     pytania.setNameFilters(filters);
@@ -37,7 +37,7 @@ std::vector<QVector<Pytanie>> ImporterBlokowy::wczytajDane()
     {
         pojBlok.clear();
         QString pytPath = egzPath + "/" + files.at(idx);
-        wczytajBlok(pytPath, pojBlok, idx);
+        wczytajBlok(pytPath, pojBlok, idx, typ);
         bloki.push_back(pojBlok);
     }
 
@@ -45,11 +45,8 @@ std::vector<QVector<Pytanie>> ImporterBlokowy::wczytajDane()
     return bloki;
 }
 
-void ImporterBlokowy::wczytajBlok(QString &path, QVector<Pytanie> &dst, int numBlok)
+void ImporterBlokowy::wczytajBlok(QString &path, QVector<Pytanie> &dst, int numBlok, TypPytania typ)
 {
-    //CHWILOWE:
-    TypPytania typ = TypPytania::Zrozumienie;
-
     // Wczytanie pliku i pobranie pełnej treści:
     QString rawData;
     QFile plik(path);

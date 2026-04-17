@@ -14,7 +14,7 @@ public:
     void setPrzedmiot(QString nazwa);
     void wczytajPytania();
     int getLiczbaBlokow();
-    void losujPytania(int blok, int num);
+    void losujPytania(int blok, int addNumWiedza, int addNumZrozum);
     QString getAktPrzedmiot();
     QStringList getListaPrzedmiotow();
     void odznaczPytania(QVector<int>,int);

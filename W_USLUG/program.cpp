@@ -32,10 +32,10 @@ int Program::getLiczbaBlokow()
 
 // USŁUGA losująca pytania dla danego bloku. Przyjmuje liczbę dodatkowych pytań, gdyż
 // zawsze losuje minimum 3 pytania (obowiązkowe na egzaminie):
-void Program::losujPytania(int blok, int addNum)
+void Program::losujPytania(int blok, int addNumWiedza,int addNumZrozum)
 {
     //Losowanie pytan -> delegowane do bazy:
-    m_WylosPyt[blok] = m_BazaPytan->losujPytania(blok,addNum);
+    m_WylosPyt[blok] = m_BazaPytan->losujPytania(blok,addNumWiedza,addNumZrozum);
 
     // Zlecenie wypisania pytań do warstwy prezentacji przy pomocy sygnału:
     emit wypisz(m_WylosPyt[blok], blok);

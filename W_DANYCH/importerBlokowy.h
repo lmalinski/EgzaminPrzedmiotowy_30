@@ -8,11 +8,11 @@
 
 class ImporterBlokowy : public Importer
 {
-    void wczytajBlok(QString &path, QVector<Pytanie> &dst, int numBlok);
+    void wczytajBlok(QString &path, QVector<Pytanie> &dst, int numBlok, TypPytania typ);
 public:
     explicit ImporterBlokowy(QString dir);
     ~ImporterBlokowy(){}
-    std::vector<QVector<Pytanie>> wczytajDane() override;
+    std::vector<QVector<Pytanie>> wczytajDane(TypPytania typ) override;
 };
 
 #endif // IMPORTERBLOKOWY_H

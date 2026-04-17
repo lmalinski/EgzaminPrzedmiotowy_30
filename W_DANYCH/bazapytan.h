@@ -12,9 +12,10 @@ class BazaPytan
 private:
     int m_liczbaBlokow = 0;
     Importer *m_importer = nullptr;
-    std::vector<QVector<Pytanie>> m_bloki;
-    std::vector<Urn> m_urnyDoLosowania;
-    static const int MIN_LICZ_PYT = 3;
+    std::vector<QVector<Pytanie>> m_wiedzaBlok;
+    std::vector<QVector<Pytanie>> m_zrozumienieBlok;
+    //liczba elemetów urn jest dostsosowana do liczby typow pytan - pobranie z liczby katalogów, gdyż nie da się odczytać liczby wartosci w enum
+    std::array<std::vector<Urn>,std::size(NAZWY_KATALOGOW)> m_urnyDoLosowania;
 
 public:
     BazaPytan(QString dir);
@@ -25,8 +26,7 @@ public:
     //QVector<Pytanie> & getBlok(int num) {return m_bloki.at(num);}
     QString getPrzedmiot() {return m_importer->getPrzedmiot();}
     QStringList getListaPrzedmiotow() {return m_importer->getListaPrzedmiotow();}
-    QVector<Pytanie> & getBlok(int num) {return m_bloki.at(num);}
-    QVector<Pytanie> losujPytania(int blok, int addNum);
+    QVector<Pytanie> losujPytania(int blok, int addNumWiedza, int addNumZrozum);
 
 
 };

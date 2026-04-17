@@ -7,28 +7,39 @@ BazaPytan::BazaPytan(QString dir)
 
 void BazaPytan::wczytajDane()
 {
-    m_bloki = m_importer->wczytajDane();
-    m_liczbaBlokow = m_bloki.size();
-    m_urnyDoLosowania.resize(m_liczbaBlokow);
+    m_wiedzaBlok = m_importer->wczytajDane(TypPytania::Wiedza);
+    m_zrozumienieBlok = m_importer->wczytajDane(TypPytania::Zrozumienie);
+    m_liczbaBlokow = m_wiedzaBlok.size();
+    m_urnyDoLosowania[(int)TypPytania::Wiedza].resize(m_liczbaBlokow);
+    m_urnyDoLosowania[(int)TypPytania::Zrozumienie].resize(m_liczbaBlokow);
     for (int blok = 0; blok < m_liczbaBlokow; blok++)
-        m_urnyDoLosowania[blok].setLiczElem(m_bloki[blok].size());
+    {
+        m_urnyDoLosowania[(int)TypPytania::Wiedza][blok].setLiczElem(m_wiedzaBlok[blok].size());
+        m_urnyDoLosowania[(int)TypPytania::Zrozumienie][blok].setLiczElem(m_zrozumienieBlok[blok].size());
+    }
 }
 
-QVector<Pytanie> BazaPytan::losujPytania(int blok, int addNum)
+QVector<Pytanie> BazaPytan::losujPytania(int blok, int addNumWiedza, int addNumZroz)
 {
-    Q_ASSERT_X(m_urnyDoLosowania[blok].maElementy(),"BazaPytan/losujPytania","Niezainicjalizowana urna");
+    Q_ASSERT_X(m_urnyDoLosowania[(int)TypPytania::Wiedza][blok].maElementy(),"BazaPytan/losujPytania","Niezainicjalizowana urna dla wiedzy");
+    Q_ASSERT_X(m_urnyDoLosowania[(int)TypPytania::Zrozumienie][blok].maElementy(),"BazaPytan/losujPytania","Niezainicjalizowana urna dla zrozumienia");
 
-    // Wyznaczenie liczby pytań do losowania i przygotowanie vectora buforującego wylosowane pytania:
-    int toLos = MIN_LICZ_PYT;// + numNumWiedza;
-    QVector<Pytanie> wylosPyt(toLos);
+    const int MIN_LICZ_WIEDZA = 3;
+    const int MIN_LICZ_ZROZ = 6;
+    // Wyznaczenie liczby pytań do losowania i przygotowanie vectora buforującego wylosowane pytania (OBA TYPY zbiorczo):
+    int liczWiedza = MIN_LICZ_WIEDZA + addNumWiedza;
+    int liczZrozum = MIN_LICZ_ZROZ + addNumZroz;
+    QVector<Pytanie> wylosPyt(liczWiedza + liczZrozum);
 
     // Losowanie indeksów pytań z redukcją powtórzeń (patrz urna.cpp).
     // Istotne jest to, że urny losuja tylko indeksy pytań:
-    QVector<int> numery = m_urnyDoLosowania[blok].losujRedukcjaPowt(toLos);
+    QVector<int> numeryWiedza = m_urnyDoLosowania[(int)TypPytania::Wiedza][blok].losujRedukcjaPowt(liczWiedza);
+    QVector<int> numeryZrozum = m_urnyDoLosowania[(int)TypPytania::Zrozumienie][blok].losujRedukcjaPowt(liczZrozum);
 
     // Pobranie pytań z bazy zgodnie z wylosowanymi indeksami:
-    for(int pyt = 0; pyt < toLos; pyt++)
-        wylosPyt[pyt] = m_bloki[blok].at(numery[pyt]);
-
+    for(int pyt = 0; pyt < liczWiedza; pyt++)
+        wylosPyt[pyt] = m_wiedzaBlok[blok].at(numeryWiedza[pyt]);
+    for(int pyt = liczWiedza; pyt < liczWiedza+liczZrozum; pyt++)
+        wylosPyt[pyt] = m_zrozumienieBlok[blok].at(numeryZrozum[pyt-liczWiedza]);
     return wylosPyt;
 }

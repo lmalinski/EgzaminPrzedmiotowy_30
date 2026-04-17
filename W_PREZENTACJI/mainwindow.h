@@ -46,7 +46,8 @@ private:
     Ui::MainWindow *ui;
     Program m_uslugi;
 
-    std::array<QSpinBox*,MAX_LICZ_BLOKOW> m_pytLicz;
+    std::array<QSpinBox*,MAX_LICZ_BLOKOW> m_pytLiczW;
+    std::array<QSpinBox*,MAX_LICZ_BLOKOW> m_pytLiczZ;
     std::array<QTextBrowser*,MAX_LICZ_BLOKOW> m_pytDispPelny;
     std::array<QPushButton*,MAX_LICZ_BLOKOW> m_genPush;
     std::array<QWidget*,MAX_LICZ_BLOKOW> m_tabs;

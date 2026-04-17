@@ -8,18 +8,19 @@ DONE:
 - Dodaj nową klasę BazaPytan w wartwie danych, która bedzie przechowywać i katalogować pytania. Chwilowo jako czystą fasade dla importera.
 - przenies przechowyanie pytan z importer do bazaPytan.
 - Przebuduj program tak aby to  bazaPytan dawala funkcjonalnosc losowania.
+- Dostsosuj nowy importer do mozlisowsci wczytywania roznych blokow (wiedza/zrozumienie). Zleca BazaPytan.
+- Rozbuduj BazePytan o przechowyanie obu typow pytan.
+- Opracuj lowoanie pytan dla obu pul na chwilę bez podzbiorów.
+- Rozbuduj GUI o zadawanie dodatkowych pytan dla obu typow.
 
 CURRENT:
-- Przemysl i popraw budowe i interfejs bazy pytan w kontekscie nowej oragnizacji pytan. Importer ma wczytywac zadane pytania z pliku, baza ma je organizowac w programie)
-
+- Zaktualizuj tresci plików pytań.
 
 TODO:
-- Dostsosuj nowy importer blokowy pytań do nowej organizacji pytan.
-- Opracuj lowoanie pytan dla obu pul na chwilę bez podzbiorów.
 - Przebuduj losowanie pytania tak aby dzielił daną pule na równe 3/6 podzbiorów i losował z tych podzbiorów.
 - Dodaj wypiswanie numeru pytania w formie sygnatury WX i ZY
-- Dodaj algorytm losowania dodatkowych pytań dla obu pul.
+- Przebuduj algorytm losowania dodatkowych pytań dla obu pul tak aby pasował do podzbiorów
 - Dodaj funkcjonalnosć przywracania pytań (jak w egzaminie dyplomowym)
-- Dodaj funcjonalnosć logowania histori egzaminu.
-- Usuń przenkanie warstw -> klasa pytanie nie moze być dostępna w warstwie prezentacji.
-- Zaktualizuj pliki pytań -> do każdego semstru dwa osobne pliki W i Z
+- Dodaj funcjonalnosć logowania historii egzaminu.
+- Usuń przenikanie warstw -> klasa pytanie nie moze być dostępna w warstwie prezentacji.
+

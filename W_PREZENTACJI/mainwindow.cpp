@@ -14,7 +14,8 @@
     // Tablice wskaźników do sterowania zbiorowego. Pozwalają odwoływać się do kontrolek po numerze,
     // co ułatwia proceduralną modyfikację interfejsu (np. w pętli) i realizację zasady DRY:
     m_pytDispPelny = {ui->pytAPelny, ui->pytBPelny};
-    m_pytLicz      = {ui->liczA, ui->liczB};
+    m_pytLiczW     = {ui->liczAW, ui->liczBW};
+    m_pytLiczZ     = {ui->liczAZ, ui->liczBZ};
     m_genPush      = {ui->pushGenBA, ui->pushGenBB};
     m_tabs         = {ui->tabA, ui->tabB};
 
@@ -55,7 +56,8 @@ void MainWindow::wylaczWszystko()
     for(int blok = 0; blok < MAX_LICZ_BLOKOW; blok++)
     {
         m_pytDispPelny[blok]->setEnabled(false);
-        m_pytLicz[blok]->setEnabled(false);
+        m_pytLiczW[blok]->setEnabled(false);
+        m_pytLiczZ[blok]->setEnabled(false);
         m_genPush[blok]->setEnabled(false);
         m_tabs[blok]->setEnabled(false);
     }
@@ -67,12 +69,13 @@ void MainWindow::genrujPytania(int blok)
 {
     // Dezaktywacja kontrolek GUI:
     m_genPush[blok]->setEnabled(false);
-    m_pytLicz[blok]->setEnabled(false);
+    m_pytLiczW[blok]->setEnabled(false);
+    m_pytLiczZ[blok]->setEnabled(false);
     ui->pushWyczysc->setEnabled(true);
 
     // Wywołanie usługi generowania pytań – przekazywana jest liczba *dodatkowych* pytań,
     // ponieważ domyślnie generowane są 3 pytania bazowe.
-    m_uslugi.losujPytania(blok, m_pytLicz[blok]->value());
+    m_uslugi.losujPytania(blok, m_pytLiczW[blok]->value(),m_pytLiczZ[blok]->value());
 }
 
 // SLOTY (REAKCJE):
@@ -97,10 +100,12 @@ void MainWindow::on_pushWyczysc_clicked()
     for(int blok = 0; blok < m_uslugi.getLiczbaBlokow(); blok++)
     {
         m_tabs[blok]->setEnabled(true);
-        m_pytLicz[blok]->setEnabled(true);
+        m_pytLiczW[blok]->setEnabled(true);
+        m_pytLiczZ[blok]->setEnabled(true);
         m_genPush[blok]->setEnabled(true);
         m_pytDispPelny[blok]->clear();
-        m_pytLicz[blok]->setValue(0);
+        m_pytLiczW[blok]->setValue(0);
+        m_pytLiczZ[blok]->setValue(0);
     }
     ui->tabBloki->setCurrentIndex(0);
 }

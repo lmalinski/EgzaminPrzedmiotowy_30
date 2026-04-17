@@ -17,7 +17,7 @@ protected:
     QString m_aktPrzedmiot;
     void wykryjPrzedmioty();
 public:
-    virtual std::vector<QVector<Pytanie>> wczytajDane() = 0;
+    virtual std::vector<QVector<Pytanie>> wczytajDane(TypPytania typ) = 0;
     explicit Importer(QString dir);
     virtual ~Importer(){}
     QStringList getListaPrzedmiotow() {return m_listaPrzedmiotow;}
