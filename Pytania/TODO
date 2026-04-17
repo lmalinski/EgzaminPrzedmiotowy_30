@@ -1,16 +1,17 @@
 DONE:
-1. Usuń funkcjonalność "Rozbij pytania" - nie jest potrzebna w nowej wersji.
-2. Chwilowo zablokuj losowanie dodatkowych pytań.
-3. Usuń dwustanowe losowanie pytań -> zastąp pełnym wypisywaniem wszystkich pytań -> tak będzie w docelowej wersji
+- Usuń funkcjonalność "Rozbij pytania" - nie jest potrzebna w nowej wersji.
+- Chwilowo zablokuj losowanie dodatkowych pytań.
+- Usuń dwustanowe losowanie pytań -> zastąp pełnym wypisywaniem wszystkich pytań -> tak będzie w docelowej wersji
+- Przebuduj klase pytanie na treść + typ pytania (W/Z).
 
 TODO:
-4. Przebuduj klase pytanie na treść + typ pytania (W/Z).
-5. Zaktualizuj pliki pytań -> do każdego semstru dwa osobne pliki W i Z
-6. Dostsosuj nowy importer pytań i nową bazę pytań.
-7. Opracuj lowoanie pytan dla obu pul na chwilę bez podzbiorów.
-8. Przebuduj losowanie pytania tak aby dzielił daną pule na równe 3/6 podzbiorów i losował z tych podzbiorów.
-9. Dodaj wypiswanie numeru pytania w formie sygnatury WX i ZY
-10. Dodaj algorytm losowania dodatkowych pytań dla obu pul.
-11. Dodaj funkcjonalnosć przywracania pytań (jak w egzaminie dyplomowym)
-12. Dodaj funcjonalnosć logowania histori egzaminu.
-13. Usuń przenkanie warstw -> klasa pytanie nie moze być dostępna w warstwie prezentacji.
+
+- Zaktualizuj pliki pytań -> do każdego semstru dwa osobne pliki W i Z
+- Dostsosuj nowy importer pytań i nową bazę pytań.
+- Opracuj lowoanie pytan dla obu pul na chwilę bez podzbiorów.
+- Przebuduj losowanie pytania tak aby dzielił daną pule na równe 3/6 podzbiorów i losował z tych podzbiorów.
+- Dodaj wypiswanie numeru pytania w formie sygnatury WX i ZY
+- Dodaj algorytm losowania dodatkowych pytań dla obu pul.
+- Dodaj funkcjonalnosć przywracania pytań (jak w egzaminie dyplomowym)
+- Dodaj funcjonalnosć logowania histori egzaminu.
+- Usuń przenkanie warstw -> klasa pytanie nie moze być dostępna w warstwie prezentacji.

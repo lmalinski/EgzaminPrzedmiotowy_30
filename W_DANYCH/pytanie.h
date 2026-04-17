@@ -3,25 +3,21 @@
 
 #include <QString>
 
+enum class TypPytania{Wiedza,Zrozumienie};
+
 class Pytanie
 {
-    QString m_naglowek    = "";
-    QString m_wiedza    = "";
-    QString m_zrozum = "";
-    QString m_dyskusja  = "";
-    int m_numer;
-    int m_blok;
+    QString m_tresc = "";
+    TypPytania m_typ = TypPytania::Wiedza;
+    int m_numer = 0;
+    int m_blok = 0;
 public:
     Pytanie() = default;
-    Pytanie(QString &rawData, int num, int blok);
+    Pytanie(QString &rawData, TypPytania typ, int num, int blok);
     QString getTresc();
-    QString getCzystyNaglowek();
-    QString getNaglowek();
-    QString getWiedza();
-    QString getZrozumienie();
-    QString getDyskusja();
-    int getNumer () {return m_numer;}
-    int getBlok () {return m_blok;}
+    TypPytania getTyp() const {return m_typ;}
+    int getNumer () const {return m_numer;}
+    int getBlok () const {return m_blok;}
 };
 
 #endif // PYTANIE_H

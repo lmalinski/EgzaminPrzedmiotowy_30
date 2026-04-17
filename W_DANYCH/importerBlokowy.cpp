@@ -47,6 +47,9 @@ void ImporterBlokowy::wczytajDane()
 
 void ImporterBlokowy::wczytajBlok(QString &path, QVector<Pytanie> &dst, int numBlok)
 {
+    //CHWILOWE:
+    TypPytania typ = TypPytania::Zrozumienie;
+
     // Wczytanie pliku i pobranie pełnej treści:
     QString rawData;
     QFile plik(path);
@@ -68,6 +71,6 @@ void ImporterBlokowy::wczytajBlok(QString &path, QVector<Pytanie> &dst, int numB
         auto wpis = separated.at(idx);
         if (wpis.at(0) == '\n')
             wpis.remove(0, 1);
-        dst.push_back(Pytanie(wpis, idx, numBlok));
+        dst.push_back(Pytanie(wpis, typ, idx, numBlok));
     }
 }
