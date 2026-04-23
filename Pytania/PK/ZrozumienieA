@@ -1,100 +1,84 @@
-Organizacja kodu w programowaniu|
-Omówić budowę jednostki translacji i zawartość poszczególnych plików dedykowanej dla pojedynczej klasy|
-Na przykładzie kodu wytłumaczyć sposoby zapobiegania wielokrotnemu dołączaniu plików nagłówkowych i dołączeniom cyklicznym|
-Porównać dostępność i działanie zasobów globalnych definiowanych jako extern, static lub inline
+Proszę wyjaśnić, w jakich okolicznościach może dojść do wielokrotnego i cyklicznego dołączania plików nagłówkowych oraz jak działają mechanizmy zabezpieczające przed tymi zjawiskami.
 @
-Polimorfizm proceduralny statyczny|
-Wyjaśnić, jak uzyskujemy i jak działa polimorfizm proceduralny statyczny w języku C/C++|
-Na przykładzie kodu wyjaśnić jak argumenty domyślne wpływają na przeciążanie nazw funkcji|
-Przedyskutować w jakich sytuacjach używa się polimorfizmu statycznego
+Proszę na przykładzie kodu wyjaśnić, jak można przekazać informację do funkcji main przy uruchamianiu programu z linii poleceń systemu operacyjnego.
 @
-Polimorfizm proceduralny dynamiczny|
-Wyjaśnić, jak uzyskujemy i jak działa polimorfizm proceduralny dynamiczny w języku C/C++|
-Na przykładzie kodu wyjaśnić jak utworzyć i posłużyć się wskaźnikiem do nietrywialnej funkcji|
-Przedyskutować w jakich sytuacjach używa się polimorfizmu dynamicznego
+Proszę wyjaśnić, jak działają specyfikatory extern, inline i static przy definiowaniu zasobów globalnych w programie.
 @
-Przekazywanie tablic do funkcji|
-Wymienić i podać składnię sposobów przesyłania tablic (jedno i wielowymiarowych) do funkcji|
-Na przykładzie kodu pokazać jak sposób przekazania tablicy wpływa na elastyczność wywołania funkcji|
-Zaproponować i przedyskutować przykłady nietypowego przekazywania tablic do funkcji z uzasadnieniem ich stosowania
+Proszę wytłumaczyć, jak domyślne wartości argumentów funkcji wpływają na działanie polimorfizmu proceduralnego statycznego.
 @
-Dynamiczna alokacja pamięci|
-Omówić składnie alokacji/dealokacji dynamicznej instancji i tablicy instancji typów fundamentalnych i złożonych w języku C++|
-Na przykładach kodu zaproponować jak powiązać alokację z jej rozmiarem, aby informacje te nie były rozdzielnymi informacjami|
-Przedyskutować jakie są różnice między operatorami new/delete a funkcjami malloc/free
+Proszę omówić podstawy działania maszyny stanów.
 @
-Wyciek pamięci|
-Omówić zdefiniować „czas życia alokacji” i pojęcie wycieku pamięci|
-Na przykładach kodu wytłumaczyć w jakich sytuacjach może dojść do wycieku pamięci|
-Podać jakie wymogi muszą być spełnione, aby funkcja mogła zwróć wynik jako wskaźnik lub referencję i przedyskutować potencjalne konsekwencje braku ich spełnienia
+Proszę zdefiniować tablicę wskaźników na funkcję zadaną przez prowadzącego oraz pokazać, jak wywołać losową funkcję za pośrednictwem elementu tej tablicy.
 @
-Dynamiczne tablice wielowymiarowe|
-Wymienić i omówić budowę poznanych rodzajów alokacji dynamicznych tablic wielowymiarowych|
-Na przykładzie kodu wytłumaczyć jak rozpoznać rodzaj alokacji wielowymiarowej|
-Porównać wymienione rodzaje alokacji pod względem elastyczności, zużycia pamięci i szybkości przetwarzania
+Proszę omówić elastyczność poznanych sposobów przekazywania tablic do funkcji.
 @
-Operacje bitowe|
-Wymienić i zdefiniować podstawowe operacje bitowe w języku C/C++|
-Na przekładzie kodu i wizualizacji reprezentacji binarnej liczby, wytłumaczyć działanie wybranej operacji bitowej z użyciem masek bitowych|
-Przedyskutować w jaki sposób można wykorzystać operacje bitowe do kompresji informacji na potrzeby serializacji i archiwizacji danych
+Proszę wyjaśnić różnice w działaniu i składni użycia między operatorami new/delete a funkcjami malloc/free.
 @
-Operacje plikowe w C|
-Wymienić i scharakteryzować wszystkie tryby pracy z plikami dostępne ramach biblioteki cstdio|
-Wytłumaczyć różnice w dzianiu i przeznaczeniu trybów „r+”, „w+” i „a+”|
-Porównać tryb komunikacji binarnej i tekstowej w kontekście użyteczności do archiwizacji informacji
+Proszę omówić, jak można powiązać alokację tablicy dynamicznej z jej rozmiarem oraz jakie operacje należy wykonać przy zmianie jej rozmiaru (realokacji).
 @
-Klasy i enkapsulacja|
-Zdefiniować pojęcie klasy, instancji klasy i zasadę enkapsulacji|
-Na przykładzie kodu wytłumaczyć budowę ciała klasy, tworzenie instancji i dostęp do składników klasy w obliczu enkapsulacji|
-Przedyskutować jaki korzyści daje nam dostęp do pól przez akcesory
+Proszę omówić, jakie obszary pamięci są wykorzystywane w programie komputerowym napisanym w C++ oraz jakie dane są przechowywane w każdym z nich.
 @
-Składniki klasy|
-Omówić składnie definicji składników instancyjnych i statycznych|
-Na przykładzie kodu wytłumaczyć różnice w działaniu tych składników|
-Przedyskutować zastosowania składników statycznych klas w programowaniu obiektowym
+Proszę omówić oba sposoby sprawdzania poprawności alokacji pamięci dynamicznej.
 @
-Tworzenie instancji|
-Omówić składnię nagłówka i przeznaczenie poznanych typów konstruktów|
-Na przykładzie kodu pokazać w jakich sytuacjach wywołane zostaną poszczególne typy|
-Porównać użycie listy inicjalizacyjnej do inicjalizacji pól w ciele konstruktora
+Proszę na krótkim przykładzie kodu pokazać przynajmniej dwie sytuacje, w których dochodzi do wycieku pamięci.
 @
-Instancje stałe|
-Omówić znaczenie specyfikatora const za nagłówkiem metody i działanie pół typu mutable|
-na przykładzie kodu pokazać w jakich sytuacjach możemy mieć problem z praca na instancji chronionej przed zapisem|
-Porównać inicjalizację pól stałych przez wartości domyślne i listę inicjalizacyjną
+Proszę wyjaśnić, co musi być spełnione, aby funkcja mogła poprawnie zwrócić adres lub referencję oraz jakie będą konsekwencje niespełnienia tych wymagań.
 @
-Dziedziczenie|
-Omówić typy dziedziczenia i tworzenie wyjątków od typu dziedziczenia|
-Na przykładzie kodu wyjaśnić, jak działa przesłanianie metod w klasach pochodnych i jak uzyskać dostęp do składników prywatnych klasy bazowej|
-Na konkretnych przykładach przedyskutować zastosowanie dziedziczenia w programowaniu obiektowym
+Proszę wyjaśnić, jak napisać kod rozpoznający rodzaj alokacji dynamicznej tablicy dwuwymiarowej.
 @
-Hierarchie dziedziczenia|
-Omówić poznane hierarchie dziedziczenia i z jakich narzędzi programistycznych korzystają|
-Wytłumaczyć praktyczny przykład dziedziczenia wirtualnego z wyjaśnieniem która klasa odpowiada za tworzenie poszczególnych instancji|
-Przedyskutować na konkretnych przykładach dobór hierarchii dziedziczenia do modelowania problemu obiektowego
+Proszę omówić różnice w elastyczności i zużyciu pamięci poznanych alokacji dynamicznych tablic dwuwymiarowych oraz wyjaśnić, czym jest fragmentacja pamięci.
 @
-Polimorfizm obiektowy|
-Zdefiniować pojęcie polimorfizmu obiektowego dynamicznego i statycznego|
-Wytłumaczyć na przykładzie jak uzyskać działanie polimorfizmu dynamicznego i jak działa specyfikator override|
-Przedyskutować w jaki sposób możemy dokonać dynamicznego rozpoznania typu i na jakie trudności możemy przy tym napotkać
+Proszę zademonstrować ustawienie wybranego bitu zmiennej w stan wysoki, niski i przeciwny z użyciem maski bitowej.
 @
-Interakcje obiektowe|
-Wymienić i krótko scharakteryzować podstawowe relacje obiektowe|
-Na przykładzie kodu wytłumaczyć implementację poprawnej asocjacji obustronnej|
-Przedyskutować inne niż podane na wykładzie przykłady zastosowania każdej z wymienionych relacji
+Proszę omówić kompresję i dekompresję informacji z wykorzystaniem operacji bitowych.
 @
-Przeciążenie operatorów|
-Omówić składnię obu sposobów przeciążania operatorów dla własnych złożonych typów danych|
-Na przykładzie zademonstrować przeciążenie dwóch różnych operatorów (każdy innym sposobem)|
-Porównać elastyczność i stosowalność obu sposobów przeciążania
+Proszę omówić, czym różni się zapis binarny do pliku od zapisu tekstowego oraz jaki jest sens istnienia rozdzielnych trybów „r+” i „w+”.
 @
-Konwersje|
-Zdefiniować czym są konwersje formalne, nieformalne, redukujące i rozbudowujące|
-Na przykładzie zademonstrować definicję jednej konwersji formalnej i jednej nieformalnej|
-Porównać właściwości konwersji formalnych i nieformalnych w kontekście ich elastyczności i użyteczności w kodzie
+Proszę wyjaśnić, w jaki sposób akcesory pozwalają kontrolować stan obiektu.
 @
-Kopiowanie zasobów zewnętrznych|
-Omówić czym jest kopia element-po-elemencie i kopia binarna zasobu|
-Na przykładzie kodu wytłumaczyć jak zaimplementować jedną i drugą|
-Przedyskutować przy jakich wymogach można zastosować kopię binarną i jakie będą konsekwencje ich naruszenia
+Proszę na krótkim przykładzie kodu pokazać przynajmniej dwa różne praktyczne zastosowania składników statycznych klasy.
+@
+Proszę porównać przestrzeń nazw do klasy czysto statycznej.
+@
+Proszę, przy pomocy krótkiego przykładu kodu, utworzyć instancje klasy z użyciem wszystkich poznanych typów konstruktorów.
+@
+Proszę wyjaśnić, do czego służy lista inicjalizacyjna konstruktora oraz wymienić, co można w niej umieścić.
+@
+Proszę omówić kolejność inicjalizacji obiektu klasy w przypadku zdefiniowania wartości domyślnych dla pól, obecności listy inicjalizacyjnej oraz seterów w ciele konstruktora.
+@
+Proszę omówić, w jaki sposób można inicjalizować pola stałe w klasie.
+@
+Proszę omówić, w jakich sytuacjach może dojść do pracy z instancją chronioną przed zapisem oraz co należy zapewnić w klasie, aby możliwe było wywoływanie jej metod.
+@
+Proszę na przykładzie kodu wyjaśnić, czym jest przesłanianie składników klasy oraz jak uzyskać dostęp do przesłoniętych składników.
+@
+Proszę wyjaśnić różnice między dziedziczeniem wielobazowym, wielopoziomowym i wirtualnym.
+@
+Proszę na praktycznych przykładach omówić przynajmniej dwa zastosowania dziedziczenia w programowaniu obiektowym.
+@
+Proszę wyjaśnić, co jest przyczyną stosowania dziedziczenia wirtualnego oraz które klasy w hierarchii muszą dziedziczyć wirtualnie.
+@
+Proszę wyjaśnić, dlaczego zaleca się, aby destruktor klasy był wirtualny.
+@
+Proszę wyjaśnić, jak można w czasie wykonania rozpoznać typ obiektu.
+@
+Proszę wyjaśnić znaczenie specyfikatorów override i final przy przeciążaniu metod wirtualnych.
+@
+Proszę, przy pomocy rysunku, omówić sposób nawiązywania i rozwiązywania poprawnej asocjacji obustronnej.
+@
+Proszę omówić podobieństwa i różnice między asocjacją, agregacją i kompozycją.
+@
+Proszę przedyskutować, kiedy użyć dziedziczenia, a kiedy kompozycji.
+@
+Proszę wyjaśnić, dlaczego nie można dokonać inkrementacji wskaźnika klasy bazowej pracującego na elementach tablicy klasy pochodnej.
+@
+Proszę wyjaśnić, jakie są różnice między definiowaniem operatora jako metody a jako funkcji globalnej.
+@
+Proszę pokazać przykład zdefiniowania operatorów == i != dla klasy zawierającej przynajmniej jedno pole typu fundamentalnego i co najmniej jedną tablicę.
+@
+Proszę omówić różnice między konwersjami formalnymi i nieformalnymi.
+@
+Proszę wyjaśnić, kiedy można stosować kopię binarną oraz jakie mogą być konsekwencje niespełnienia tych warunków.
+@
+Proszę omówić, jak działa relacja przyjaźni w C++ oraz kiedy uzasadnione jest jej stosowanie.
 @

@@ -1,5 +1,6 @@
 #include "importerBlokowy.h"
 #include <QDir>
+#include <qdebug>
 
 // KONSTRUKTOR:
 
@@ -39,6 +40,7 @@ std::vector<QVector<Pytanie>> ImporterBlokowy::wczytajDane(TypPytania typ)
         QString pytPath = egzPath + "/" + files.at(idx);
         wczytajBlok(pytPath, pojBlok, idx, typ);
         bloki.push_back(pojBlok);
+        qInfo() << idx << pytPath << pojBlok.size();
     }
 
     // Zapisanie faktycznej liczby wczytanych bloków:

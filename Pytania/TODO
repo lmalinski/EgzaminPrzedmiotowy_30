@@ -12,15 +12,15 @@ DONE:
 - Rozbuduj BazePytan o przechowyanie obu typow pytan.
 - Opracuj lowoanie pytan dla obu pul na chwilę bez podzbiorów.
 - Rozbuduj GUI o zadawanie dodatkowych pytan dla obu typow.
+- Zaktualizuj tresci plików pytań.
 
 CURRENT:
-- Zaktualizuj tresci plików pytań.
+- Przebuduj algorytm losowania dodatkowych pytań dla obu pul tak aby pasował do podzbiorów
 
 TODO:
 - Dodaj nowy system eliminacji pytań
 - Przebuduj losowanie pytania tak aby dzielił daną pule na równe 3/6 podzbiorów i losował z tych podzbiorów.
 - Dodaj wypiswanie numeru pytania w formie sygnatury WX i ZY
-- Przebuduj algorytm losowania dodatkowych pytań dla obu pul tak aby pasował do podzbiorów
 - Dodaj funkcjonalnosć przywracania pytań (jak w egzaminie dyplomowym)
 - Dodaj funcjonalnosć logowania historii egzaminu.
 - Usuń przenikanie warstw -> klasa pytanie nie moze być dostępna w warstwie prezentacji.

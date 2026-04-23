@@ -9,13 +9,15 @@ Pytanie::Pytanie(QString &rawData, TypPytania typ, int num, int blok)
 
 QString Pytanie::getTresc()
 {
+
+    QString sygnatura = QString(NAZWY_KATALOGOW[(int)m_typ][0]) + " " + ((m_numer<9)? "0" : "") + QString::number(m_numer+1);
     switch(m_typ)
     {
     case TypPytania::Wiedza:
-        return "<p style=\"color:red\">" + m_tresc + "</p>";
+        return "<p style=\"color:red\">" + sygnatura + ": " + m_tresc + "</p>";
         break;
     case TypPytania::Zrozumienie:
-        return "<p style=\"color:green\">" + m_tresc + "</p>";
+        return "<p style=\"color:green\">" + sygnatura + ": " + m_tresc + "</p>";
         break;
     }
     return "";

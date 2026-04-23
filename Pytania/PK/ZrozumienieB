@@ -1,100 +1,84 @@
-Kopiowanie instancji|
-Wymienić i omówić składnię nagłówka narzędzi w klasach służących do definiowania kopii i przenoszenia instancji|
-Na przykładzie wytłumaczyć czym różni się kopiowanie od przenoszenia i konstruktor kopiujący od kopiującego operatora przypisania|
-Porównać działanie kopii płytkiej głębokiej i leniwej
+Proszę, przy pomocy rysunku, wytłumaczyć, czym różni się kopia głęboka od kopii płytkiej.
 @
-Funktory|
-Omówić pojęcie i sposób definiowania funktora|
-Na przykładzie kodu pokazać w jaki sposób możemy używać funktora z narzędziami bibliotecznymi biblioteki standardowej języka C++|
-Przedyskutować wyższość funktora nad funkcją
+Proszę, przy pomocy rysunku, wytłumaczyć, czym różni się kopiowanie od przenoszenia w kopii głębokiej.
 @
-Lambdy|
-Omówić pojęcie i sposób definiowania lambdy w języku C++|
-na przykładzie kodu pokazać w jaki sposób działa lista przechwytywania w lambdzie|
-Przedyskutować, kiedy w programie powinniśmy korzystać z lambdy, funktora, a kiedy z funkcji
+Proszę, przy pomocy rysunku, wytłumaczyć, czym jest i jak działa kopia leniwa.
 @
-Uniwersalne wskazanie kodu wywoływalnego|
-Wyjaśnić czym jest i do czego służy std::function|
-Na przykładzie kodu uzyskać polimorfizm proceduralny dynamiczny z umyciem std::function|
-Przedyskutować wyższość std::function nad wskaźnikiem do funkcji
+Proszę wyjaśnić, jakie są konsekwencje polegania na automatycznie generowanych składnikach kopiujących/przenoszących w klasie z zasobem zewnętrznym.
 @
-Szablony|
-Wyjaśnić czym jest i do czego służy szablon funkcji i klasy|
-Na przykładzie kodu pokazać jak utworzyć specjalizację szablonu funkcji|
-Przedyskutować w jakich sytuacjach uzasadnione jest użycie słowa kluczowego auto
+Proszę, przy pomocy krótkiego fragmentu kodu, pokazać, jak można używać funktora z funkcjami bibliotecznymi.
 @
-Kolekcje standardowe|
-Wmienić i krótko scharakteryzować poznane typy kolekcji standardowych w języku C++|
-Na przykładzie kodu zademonstrować przetwarzanie wybranego przez egzaminującego typu kolekcji|
-Przedyskutować na przykładach do jakich zastosowań należy użyć poszczególnych typów kolekcji
+Proszę wymienić i omówić cechy funktora, które świadczą o jego wyższości nad zwykłą funkcją.
 @
-Iteratory|
-Wyjaśnić pojęcie iteratora i wymienić poznane jego typy|
-Na przykładzie kodu zademonstrować typowe operacje wykonywane iteratorem na wybornym przez egzaminującego typie kolekcji|
-Przedyskutować w jakich sytuacjach może dojść do dezaktualizacji iteratora i jak sobie z tym radzić
+Proszę na przykładzie wytłumaczyć, jak możemy używać listy przechwytywania w lambdzie.
 @
-Wiązanie strukturalne|
-Wyjaśnić pojęcie i podać składnię wiązania strukturalnego w jezyku C++|
-Na przykładzie kodu zademonstrować użycie wiązania strukturalnego do wydobycia informacji z wybranego przez egzaminującego typu złożonego|
-Przedyskutować w jaki sposób wiązanie strukturalne może przyczynić się do zwiększenia zwięzłości i czytelności kodu
+Proszę omówić zalecenia, kiedy w programie powinniśmy używać funkcji, funktora, a kiedy lambdy.
 @
-Predykaty|
-Wyjaśnić czym jest i do czego służy predykat|
-Na przykładzie kodu zademonstrować użycie predykatu z dowolną funkcją biblioteczną|
-Przedyskutować w jaki sposób predykaty zwiększaj elastyczność działania narzędzi bibliotecznych
+Proszę wyjaśnić, co sprawia, że std::function jest lepsze niż wskaźnik na funkcję.
 @
-Generatory liczb losowych|
-Wymienić i krótko scharakteryzować poznane generatory i obiekty formujące dostępne w bibliotece random|
-Na przykładzie kodu zademonstrować generowanie liczb z wybranego przez egzaminującego rozkładu o zadanych parametrach|
-Przedyskutować wyższość generatorów z biblioteki random nad generatorem rand z cstdlib
+Proszę napisać przykład definicji i użycia funkcji, która może przyjąć wskazanie funkcji, funktora lub lambdy.
 @
-Widoki|
-Wymienić i omówić poznane widoki z biblioteki standardowej|
-Na przykładzie kodu zademonstrować w jaki sposób użyć widoku w programie|
-Przedyskutować w jaki sposób widoki przyczyniają się do zwiększenia wydajności kodu i kiedy możemy ich używać
+Proszę wymienić, co może być parametrem szablonu.
 @
-Programowanie funkcyjne|
-Wymienić i omówić dzianie trzech różnych widoków z biblioteki std::ranges i wyjaśnić czym są adaptery|
-Wytłumaczyć na czym polega koncepcja programowania funkcyjnego z użyciem widoków i adapterów w języku C++ i na czym polega przetwarzanie leniwe|
-Przedyskutować użyteczność programowania funkcyjnego w kontraście do programowania obiektowego i proceduralnego
+Proszę wyjaśnić, kiedy można, trzeba, a kiedy się nie powinno używać auto przy definiowaniu obiektów.
 @
-Serializacja złożonych obiektów|
-Zdefiniować pojęcie serializacji tekstowej i binarnej złożonego obiektu|
-Na przykładzie obiektu o rozproszonej budowie w pamięci wytłumaczyć proces serializacji binarnej|
-Przedyskutować trudności w serializacji obiektów w obliczu interakcji obiektowych
+Proszę omówić budowę listy dwukierunkowej i omówić koszt operacji wykonywanych na niej.
 @
-Działanie GUI w Qt|
-Omówić czym jest i od czego służy formularz w projekcie aplikacji okienkowej w Qt|
-Na przykładzie kodu wyjaśnić, jak uzyskujemy dostęp do kontrolek ekranowych w Qt|
-Przedyskutować różnicę pomiędzy ręcznym tworzeniem GUI a korzystaniem z formularzy.
+Proszę omówić budowę wektora i omówić koszt operacji wykonywanych na nim.
 @
-Sygnały i sloty|
-Zdefiniować pojęcia sygnału, slotu emitera i odbiornika|
-Na trzech różnych przykładach omówić na czym polega ręczne łączenie sygnałów i slotów i co można łączyć|
-Porównać ograniczenia ręcznego i automatycznego łączenia sygnałów i slotów w Qt
+Proszę omówić różnice w działaniu i przeznaczeniu kolejki i stosu.
 @
-Relacja rodzic-dziecko|
-Wyjaśnić czym jest i co zapewnia relacja rodzić dziecko|
-Na przykładzie kodu zademonstrować jak wiązać i rozwiązywać obiekty przy pomoc tej relacji|
-Przedyskutować na jakie problemy musimy zwracać uwagę, aby nie doprowadzić do konfliktu działania relacji rodzić dziecko z automatycznym zarządzaniem cyklem życia obiektów
+Proszę omówić różnice w działaniu i przeznaczeniu mapy i zbioru.
 @
-Obsługa zdarzeń w Qt|
-Wyjaśnić czym jest zdarzenie w Qt i wymienić przynajmniej trzy poznane typy zdarzeń|
-Na przykładzie kodu omówić, jak dokonujemy przedefiniowania obsługi zdarzenia|
-Porównać elastyczność działanie obsługi zdarzeń do systemu sygnałów i slotów
+Proszę podać przykład dwóch różnych sytuacji, w których może dojść do dezaktualizacji iteratora ustawionego na kolekcję.
 @
-Projektowanie wyglądu aplikacji|
-Wymienić i omówić narzędzia dostępne w Qt, które ułatwiają tworzenie skalowalnego GUI|
-Wytłumaczyć jaka jest różnica między metodami show i exec|
-Porównać działanie poznanych sposobów komunikacji między oknami
+Proszę wyjaśnić, w jakich okolicznościach dochodzi do realokacji pamięci w wektorze i jak można ograniczyć jej ryzyko.
 @
-Struktura aplikacji|
-Omówić trójwarstwowy model aplikacji i za co odpowiedzialne są poszczególne warstwy|
-Wytłumaczyć jakie korzyści płyną z podziału programu na warstwy|
-Przedyskutować znaczenie wydajności i jakości kodu w poszczególnych warstwach
+Proszę wyjaśnić, jakie są ograniczenia w stosowaniu wiązania strukturalnego w C++.
 @
-Refaktoryzacja i optymalizacja|
-Zdefiniować pojęcie refaktoryzacji kodu i wymieniać jakie cele stawiamy refaktoryzacji|
-Na przykładzie kodu omówić dwa wybrane przekształcenia refaktoryzacyjne (jedno proceduralne, drugie obiektowe)|
-Porównać refaktoryzację do optymalizacji kodu
+Proszę w dowolny sposób zdefiniować predykat o działaniu podanym przez prowadzącego i pokazać jak można go sensownie użyć z funkcją z biblioteki standardowej C++.
+@
+Proszę zaproponować sensowny predykat o niejednorodnej liście argumentów (minimum dwa argumenty różnych typów).
+@
+Proszę wyjaśnić, czym jest posiew generatora i jak pozwala nam wpływać na generowanie liczb losowych.
+@
+Proszę wyjaśnić, jaka jest wyższość generatorów z biblioteki <random> nad generatorem rand().
+@
+Proszę wyjaśnić na czym polega tzw. „przetwarzanie leniwe” i jakie są jego zalety i wady.
+@
+Proszę podać praktyczny przykład kodu, w którym kaskada widoków realizuje dowolny klasyczny algorytm przetwarzania danych w tablicy.
+@
+Proszę wyjaśnić, jak dokonać serializacji binarnej obiektu spójnego i na co trzeba zwrócić uwagę przy jej wykonywaniu.
+@
+Proszę omówić ogólną koncepcję serializacji obiektów połączonych kompozycją.
+@
+Proszę omówić ogólną koncepcję serializacji obiektów połączonych dziedziczeniem.
+@
+Proszę wytłumaczyć, dlaczego agregacja i asocjacja są relacjami obiektowymi trudnymi w serializacji.
+@
+Proszę omówić przynajmniej dwa praktyczne przypadki, kiedy lepiej jest ręcznie pisać kod GUI w Qt niż korzystać z formularzy.
+@
+Proszę wymienić i omówić przynajmniej dwie istotne zalety systemu sygnałów i slotów, które ułatwiają definiowanie interakcji między obiektami w Qt.
+@
+Proszę wyjaśnić czym jest emisja kaskadowa oraz co się stanie, gdy jeden sygnał jest jednoczenie połączony z wieloma slotami.
+@
+Proszę podać przykład kodu, w którym może dojść do konfliktu między relacją rodzic-dziecko a automatycznym zarządzaniem czasem życia obiektu.
+@
+Proszę wyjaśnić do czego służy funkcja deleteLater() i kiedy musimy jej użyć zamiast delete.
+@
+Proszę podać przynajmniej dwa praktyczne przykłady, w których trzeba zdefiniować obsługę zdarzenia w Qt.
+@
+Proszę omówić przynajmniej dwa praktyczne różne sposoby komunikacji między oknami w Qt.
+@
+Proszę przedyskutować, jakie relacje obiektowe można użyć do łączenia warstw aplikacji oraz jak ten wybór wpływa na komunikację między warstwami.
+@
+Proszę porównać podobieństwa i różnice między refaktoryzacją a optymalizacją kodu.
+@
+Proszę na przykładzie kodu omówić, jak przeprowadzić wydzielenie funkcji/metody.
+@
+Proszę na przykładzie kodu omówić, jak zastąpić funkcję klasą.
+@
+Proszę na przykładzie kodu wyjaśnić, jak zastąpić wybór polimorfizmem.
+@
+Proszę podać przykład kodu testu jednostkowego sprawdzającego jedną dowolną funkcjonalność GUI w Qt.
 @

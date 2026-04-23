@@ -1,100 +1,97 @@
-Zmienne i stałe|
-Wymienić i zdefiniować typy fundamentalne w C++ i omówić ich przeznaczanie|
-Wyjaśnić na przykładach, jakie mogą być konsekwencje braku inicjalizacji zmiennych|
-Porównać różne typy stałych w C++ pod względem ich wpływu na zużycie pamięci i czytelność kodu
+Proszę na praktycznym przykładzie wyjaśnić, jakie mogą być konsekwencje braku inicjalizacji zmiennych przy kompilacji w trybie Release.
 @
-Operacje na liczbach rzeczywistych|
-Omówić techniki porównywania liczb rzeczywistych|
-Wytłumaczyć przyczyny powstawania błędów przy pracy z liczbami rzeczywistymi|
-Porównać dokładność typów rzeczywistych i dokładność reprezentacji liczb całkowitych w typach całkowitych i rzeczywistych
+Proszę wymienić i wytłumaczyć przynajmniej 3 przyczyny powstawania błędów przy pracy z liczbami rzeczywistymi.
 @
-Operacje arytmetyczne|
-Wyjaśnić, kiedy następuje dzielenie rzeczywiste, a kiedy całkowite|
-Omówić na przykładzie jak zapisać w języku C++ złożony wzór matematyczny|
-Porównać technikę dekompozycji wzorów matematycznych i optymalizację obliczeń matematycznych
+Proszę omówić na przykładach przynajmniej 3 zastosowania dzielenia całkowitego w programowaniu.
 @
-Instrukcje warunkowe|
-Omówić składnię pełnej instrukcji warunkowej i instrukcji wyboru|
-Wyjaśnić na przykładzie, jak różnice w działaniu tych instrukcji wpływają na logikę programu|
-Przedyskutować kryteria ich doboru w procesie tworzenia logiki decyzyjnej programu
+Proszę zapisać w języku C/C++ implementację obliczenia złożonego wzoru patetycznego podanego przez prowadzącego.
 @
-Operatory logiczne i porównania|
-Przedstawić i omówić operatory porównania i relacji|
-Na przykładzie omówić tworzenie złożonych wyrażeń logicznych|
-Porównać elastyczność zagnieżdżania if-else z wykorzystaniem wbudowanych reguł optymalizacji wyrażeń logicznych
+Proszę na praktycznym przykładzie zademonstrować technikę dekompozycji wzoru matematycznego.
 @
-Instrukcje iteracyjne|
-Przedstawić składnię i działanie instrukcji iteracyjnych w C++|
-Na przykładach wyjaśnić działanie instrukcji break, continue i goto|
-Porównać poznane rodzaje pętli pod względem ich zastosowania w programowaniu
+Proszę zademonstrować przykład łączenia opcji w instrukcji wyboru.
 @
-Złożone operatory przypisania|
-Przedstawić i omówić działanie dwóch różnych złożonych operatorów przypisania|
-Na przykładach wyjaśnić jak priorytety operatorów wpływają na poprawność operacji|
-Porównać działanie i zastosowanie post/preinkrementacji
+Proszę przedstawić kryteria wyboru instrukcji logicznych w procesie tworzenia logiki decyzyjnej programu.
 @
-Operacje tablicowe|
-Omówić składnię operacji tablicowych w C/C++ (deklaracja, indeksowanie i inicjalizacja)|
-Omówić budowę w pamięci tablic jedno i wielowymiarowych|
-Porównać pod względem elastyczności i stosowalności tabelaryzację logiki i instrukcji warunkowej/wyboru
+Proszę na różnych typach danych omówić interpretację logiczną wartości.
 @
-Łańcuchy znakowe|
-Omówić budowę i specyfikę przetwarzania łańcucha znakowego (c-string’u)|
-Omówić praktyczny przykład bezpośredniego przetwarzania c-stringu|
-Omówić główne podobieństwa i różnice w przetwarzaniu c-stringów z innymi typami tablicowymi
+Proszę wyjaśnić, jak działają pasywne reguły optymalizacji złożonych wyrażeń logicznych i jakie jest uzasadnienie ich działania.
 @
-Losowanie liczb|
-Wyjaśnić w jaki sposób uzyskujemy w C liczby pseudolosowe i czym jest posiew generatora|
-Omówić losowanie liczb z nieciągłych zbiorów lub losowanie bez zwracania|
-Porównać podobieństwa i różnice w sposobach losowania liczb całkowitych i rzeczywistych z zadanych przedziałów liczbowych
+Proszę podać przykład sprawdzenia, czy liczba należy/nie należy do zadanego przedziału wartości.
 @
-Wskaźniki i referencje|
-Wyjaśnić czym jest wskaźnik i jakie operacje możemy na nim wykonać|
-Wyjaśnić, jak działa specyfikator const w deklaracji typu wskaźnikowego|
-Porównać wskaźniki i referencje pod względem elastyczności i bezpieczeństwa wykonywania operacji
+Proszę omówić przykład implementacji funkcji klamrowej.
 @
-Operacje we/wy|
-Omówić poznane narzędzia C i C++ do komunikacji z użytkownikiem|
-Wyjaśnić w jaki sposób można sterować precyzją wyświetlania liczb zmiennoprzecinkowych w konsoli systemowej|
-Przedyskutować w jakich sytuacjach może dojść do utknięcia informacji w buforze strumienia wejściowego
+Proszę wyjaśnić, jak w C/C++ zrealizować logiczną (nie bitową) operację XOR.
 @
-Struktura programu|
-Omówić strukturę programu w C/C++ i sposoby zapisu komentarzy|
-Omówić znaczenie preprocesora i przykład makrodefinicji|
-Porównać pod względem zastosowania i elastyczności poznane techniki kompilacji warunkowej
+Proszę wyjaśnić kryteria doboru typu pętli do realizowanego zadania.
 @
-Błędy w programowaniu|
-Wyjaśnić czym są błędy czasu kompilacji i wykonania i jakie mają typowe objawy|
-Wyjaśnić jak poprawnie przeprowadzić izolację i stabilizację błędu czasu wykonania|
-Przedyskutować strategie usuwania obu typów błędów
+Proszę na przykładzie kodu wyjaśnić różnicę między pre- i post- inkrementacją.
 @
-Funkcje|
-Wyjaśnić czym jest i jak zbudowana jest funkcja w C/C++|
-Na przykładzie kodu wyjaśnić, jak działa wywołanie funkcji i jak wygląda przebieg sterowania|
-Porównać zalety i wady algorytmów iteracyjnych i rekurencyjnych
+Proszę omówić, jakie mogą być konsekwencje zapisu/odczytu poza zakresem indeksacji tablicy.
 @
-Typy wyliczeniowe|
-Omówić składnię i zastosowanie obu typów wyliczeniowych dostępnych C++|
-Na przykładach kodu wyjaśnić, jak możemy praktycznie wykorzystać wartość klucza liczbowego|
-Przedyskutować różnicę między oboma rodzajami typu wyliczeniowego
+Proszę na przekładzie wytłumaczyć, na czym polega tabelaryzacją obliczeń.
 @
-Typ strukturalny|
-Omówić składnię i zastosowanie typu strukturalnego w C/C++|
-Na przykładzie kodu omówić tworzenie instancji struktury i dostęp do jej składników (w tym z użyciem wskaźnika)|
-Porównać proceduralną obsługę struktur do proceduralnej obsługi tablic
+Proszę na przykładzie wytłumaczyć, na czym polega tabelaryzacją logiki.
 @
-Sygnalizacja problemów|
-Omówić poznane techniki sygnalizacji błędów występujących w funkcjach (w tym asercje)|
-Na przykładzie kodu wyjaśnić, jak działa prawidłowy system obsługi błędów oparty na wyjątkach|
-Przedyskutować, kiedy należy używać asercji, a kiedy innych typów sygnalizacji błędów
+Proszę na przykładzie wyjaśnić konsekwencje braku znaku NUL w c-stringu.
 @
-Testy jednostkowe|
-Omówić budowę testu jednostkowego i wyjaśnić jakie stawiamy mu wymagania|
-Na przykładzie kodu omówić test jednostkowy testujący funkcję zadaną przez egzaminującego|
-Przedyskutować wady i zalety techniki TDD w kontekście poprawności wytwarzania kodu
+Proszę wyjaśnić znaczenie posiewu generatora i sposoby jego zadawania (z uzasadnieniem, kiedy jaki stosować).
 @
-Algorytmy numeryczne|
-Wyjaśnić czym jest i jak działa typowy algorytm numeryczny i jakie spotykamy typy zbieżności|
-Omówić (do wyboru) algorytm różniczkowania lub całkowania numerycznego|
-Przedyskutować sposób doboru kryterium zbieżności algorytmu do rozwiązywanego problemu
+Proszę omówić, jak w losowaniu liczb rzeczywistych uzyskać granice otwarte przedziału.
 @
+Proszę wyjaśnić, jakie jest znaczenie typu wskaźnika i na przykładzie kodu wyjaśnić jak korzystać ze wskaźnika do dowolnego typu.
+@
+Proszę wyjaśnić, jak działa specyfikator const przy definicji typu wskaźnikowego.
+@
+Proszę omówić różnice między wskaźnikiem i referencją.
+@
+Proszę wyjaśnić, w jaki sposób można sterować precyzją wyświetlania liczb zmiennoprzecinkowych w konsoli systemowej.
+@
+Proszę podać przynajmniej 2 przykłady kodu, w których dojdzie do utknięcia znaków w buforze strumienia wejściowego.
+@
+Proszę omówić działanie i elastyczność poznanych technik kompilacji warunkowej.
+@
+Proszę omówić strategię usuwania błędów czasu kompilacji.
+@
+Proszę omówić strategię usuwania błędów czasu wykonania.
+@
+Proszę na przykładzie kodu wyjaśnić, na czym polega izolacja i stabilizacja błędu czasu wykonania.
+@
+Proszę, na przykładzie kodu wyjaśnić, jak wygląda przebieg sterowania przy wywołaniu funkcji.
+@
+Proszę, na przykładzie kodu wyjaśnić, jak działa rekurencja i wytłumaczyć ograniczenie skalowalności algorytmów rekurencyjnych.
+@
+Proszę wyjaśnić, jakie są różnice między typami wyliczeniowymi dostępnymi w C++.
+@
+Proszę na przykładzie kodu wyjaśnić, jak możemy w praktyce wykorzystać wartość klucza w typach wyliczeniowych.
+@
+Proszę na przykładzie kodu omówić proceduralne wypełnianie treścią instancji struktury zawierającej przynajmniej jedno pole tablicowe.
+@
+Proszę wyjaśnić, czym się różnią zapisy x.a i x -> a.
+@
+Proszę wyjaśnić różnice między strukturą a tablicą.
+@
+Proszę omówić poznane techniki programowej sygnalizacji błędów użytkowania w funkcjach.
+@
+Proszę wyjaśnić, czym różnią się błędy użytkowania od błędów programistycznych.
+@
+Proszę wyjaśnić, jak działają i do czego służą assercje w C/C++.
+@
+Proszę wyjaśnić, dlaczego assert z języka C nie nadaje się do raportowania wyników w testach jednostkowych.
+@
+Proszę zaproponować test jednostkowy dla funkcji zadanej przez prowadzącego.
+@
+Proszę wyjaśnić, jak działa zabezpieczenie testów przed niespodziewanymi wyjątkami.
+@
+Proszę omówić pośrednią i bezpośrednią obsługę wyjątków w przypadku wielokrotnego zagnieżdżenia wywołania funkcji.
+@
+Proszę omówić algorytm różniczkowania numerycznego.
+@
+Proszę omówić algorytm całkowania numerycznego.
+@
+Proszę wymienić i omówić poznane typy zbieżności algorytmów numerycznych.
+@
+Proszę omówić poznane kryteria zbieżności algorytmów numerycznych.
+@
+Proszę omówić dwie poznane techniki optymalizacji instrukcji iteracyjnych.
+@
+

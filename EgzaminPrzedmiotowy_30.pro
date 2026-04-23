@@ -39,5 +39,11 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 DISTFILES += \
     Pytania/PK/BlokA \
     Pytania/PK/BlokB \
+    Pytania/PK/WiedzaA \
+    Pytania/PK/WiedzaB \
+    Pytania/PK/ZrozumienieA \
+    Pytania/PK/ZrozumienieB \
     Pytania/PPK/BlokA \
+    Pytania/PPK/WiedzaA \
+    Pytania/PPK/ZrozumienieA \
     Pytania/TODO
