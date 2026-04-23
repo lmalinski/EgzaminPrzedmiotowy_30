@@ -13,7 +13,6 @@
 #include <QCheckBox>
 
 #include "W_USLUG\program.h"
-#include "W_DANYCH\pytanie.h"
 
 namespace Ui {
 class MainWindow;
@@ -33,7 +32,7 @@ private slots:
     void on_pushWyczysc_clicked();
     void on_przedmiot_currentTextChanged(const QString &spec);
     void on_pushWczytaj_clicked();
-    void wypisz(QVector<Pytanie>&,int);
+    void wypisz(QVector<QString>&,int);
 
 private:
     static const int MAX_LICZ_BLOKOW = 2;

@@ -28,8 +28,8 @@
     ustawGUI();
 
     // Podłączenie sygnałów z warstwy usług:
-    connect(&m_uslugi, SIGNAL(wypisz(QVector<Pytanie>&, int)),
-            this, SLOT(wypisz(QVector<Pytanie>&, int)));
+    connect(&m_uslugi, SIGNAL(wypisz(QVector<QString>&, int)),
+            this, SLOT(wypisz(QVector<QString>&, int)));
 }
 
 MainWindow::~MainWindow()
@@ -81,13 +81,13 @@ void MainWindow::genrujPytania(int blok)
 // SLOTY (REAKCJE):
 
 // Ta metoda jest slotem reagującym na sygnał „wypisz” z warstwy usług (program.cpp)
-void MainWindow::wypisz(QVector<Pytanie>& pytania, int blok)
+void MainWindow::wypisz(QVector<QString>& pytania, int blok)
 {
     // Przełączenie widoczności na QTextBrowser:
     m_pytDispPelny[blok]->setEnabled(true);
     QString tresc = "";
     for(int pyt = 0; pyt < pytania.size(); pyt++)
-        tresc += pytania[pyt].getTresc();
+        tresc += pytania[pyt];
 
 
     // Wyświetlenie treści na ekranie:

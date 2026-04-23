@@ -36,9 +36,13 @@ void Program::losujPytania(int blok, int addNumWiedza,int addNumZrozum)
 {
     //Losowanie pytan -> delegowane do bazy:
     m_WylosPyt[blok] = m_BazaPytan->losujPytania(blok,addNumWiedza,addNumZrozum);
+    QVector<QString> tresci(m_WylosPyt[blok].size());
+    int numPyt = m_WylosPyt[blok].size();
+    for(int i = 0;i<numPyt;i++)
+        tresci[i] = m_WylosPyt[blok][i].getTresc();
 
     // Zlecenie wypisania pytań do warstwy prezentacji przy pomocy sygnału:
-    emit wypisz(m_WylosPyt[blok], blok);
+    emit wypisz(tresci, blok);
 }
 
 // // USŁUGA "forwardująca" aktualnie obsługiwany przedmiot (zapisany w bazie)

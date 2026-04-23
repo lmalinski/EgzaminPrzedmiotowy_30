@@ -21,7 +21,7 @@ public:
     void ponownieWypiszWylosowane(int blok);
 
 signals:
-    void wypisz(QVector<Pytanie>&,int);
+    void wypisz(QVector<QString>&,int);
 
 private:
     static const int MAX_LICZ_BLOKOW = 2;
